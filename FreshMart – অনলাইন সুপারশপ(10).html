@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FreshMart – অনলাইন সুপারশপ</title>
+<meta name="description" content="FreshMart: তাজা সবজি, ফল, গ্রোসারি ও দৈনন্দিন পণ্য – দ্রুত হোম ডেলিভারি।">
+<meta property="og:title" content="FreshMart – অনলাইন সুপারশপ">
+<meta property="og:description" content="তাজা পণ্য, সেরা দাম, দ্রুত ডেলিভারি।">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0f7b4f"><meta name="robots" content="index,follow"><meta name="twitter:card" content="summary_large_image"><meta property="og:type" content="website">
+<script type="application/ld+json" id="ld"></script>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f5ef;--sf:#fff;--tx:#1b2a22;--mu:#6b7a72;--br:#e4e1d6;--pr:#0f7b4f;--pr2:#0a5c3b;--ac:#e8a317;--dg:#c0392b;--sh:0 8px 30px rgba(15,60,40,.09)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1612;--sf:#16211b;--tx:#e9f1ec;--mu:#93a69b;--br:#243229;--pr:#2fbf80;--pr2:#23a06b;--sh:0 8px 30px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0e1612;--sf:#16211b;--tx:#e9f1ec;--mu:#93a69b;--br:#243229;--pr:#2fbf80;--pr2:#23a06b;--sh:0 8px 30px rgba(0,0,0,.4)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans Bengali",Roboto,sans-serif;line-height:1.5}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 16px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--sf);border-bottom:1px solid var(--br)}
+.nav{display:flex;align-items:center;gap:12px;height:62px}
+.logo{font-weight:800;font-size:1.35rem;letter-spacing:-.5px;color:var(--pr);cursor:pointer}
+.logo span{color:var(--ac)}
+.sp{flex:1}
+.btn{border:0;background:var(--pr);color:#fff;padding:10px 18px;border-radius:12px;cursor:pointer;font-weight:600;transition:.15s}
+.btn:hover{background:var(--pr2);transform:translateY(-1px)}
+.btn.o{background:transparent;color:var(--tx);border:1px solid var(--br)}
+.btn.o:hover{background:var(--bg)}
+.btn.d{background:var(--dg)}.btn.s{padding:6px 11px;font-size:.85rem;border-radius:9px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--br);border-radius:10px;background:var(--bg)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--pr);border-color:transparent}
+.hero{margin:20px 0;border-radius:24px;padding:44px 32px;background:linear-gradient(120deg,#0a5c3b,#18a36a 60%,#e8a317);color:#fff;box-shadow:var(--sh)}
+.hero h1{margin:0 0 8px;font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.2}
+.hero p{margin:0 0 18px;opacity:.92;max-width:520px}
+.hero .btn{background:#fff;color:var(--pr2)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px}
+.chip{white-space:nowrap;padding:8px 16px;border-radius:99px;border:1px solid var(--br);background:var(--sf);cursor:pointer}
+.chip.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.card{background:var(--sf);border:1px solid var(--br);border-radius:18px;padding:14px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:6px;transition:.2s}
+.card:hover{transform:translateY(-3px)}
+.em{font-size:3rem;text-align:center;background:var(--bg);border-radius:14px;padding:14px 0}
+.em.has{padding:0;overflow:hidden}.em img{width:100%;height:150px;object-fit:cover;display:block}.pn{font-weight:700}.pc{color:var(--mu);font-size:.8rem}
+.pr{font-weight:800;color:var(--pr);font-size:1.1rem}
+.tag{font-size:.72rem;padding:2px 8px;border-radius:99px;background:#fdecea;color:var(--dg);align-self:flex-start}
+.tag.ok{background:#e6f6ee;color:var(--pr2)}
+.stars{color:var(--ac);letter-spacing:2px}
+.sec{margin:34px 0 14px;font-size:1.3rem;font-weight:800}
+.panel{background:var(--sf);border:1px solid var(--br);border-radius:18px;padding:18px;box-shadow:var(--sh)}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:var(--sf);z-index:40;padding:18px;overflow:auto;box-shadow:-10px 0 40px rgba(0,0,0,.25);transform:translateX(105%);transition:.25s;padding-top:calc(18px + env(safe-area-inset-top,0px))}
+.drawer.on{transform:none}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:30;display:none}.ov.on{display:block}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--br)}
+.f{display:grid;gap:10px;margin:12px 0}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin:16px 0}
+.tab{padding:9px 16px;border-radius:12px;cursor:pointer;border:1px solid var(--br);background:var(--sf);white-space:nowrap}
+.tab.on{background:var(--pr);color:#fff}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--br);white-space:nowrap}
+th{color:var(--mu);font-weight:600}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kp div{background:var(--sf);border:1px solid var(--br);border-radius:16px;padding:16px}
+.kp b{display:block;font-size:1.5rem;color:var(--pr)}.kp small{color:var(--mu)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#16211b;color:#fff;padding:12px 20px;border-radius:12px;z-index:99;display:none}
+.rs{direction:rtl;display:inline-flex}.rs input{display:none}.rs label{font-size:1.8rem;color:var(--br);cursor:pointer}.rs input:checked~label,.rs label:hover,.rs label:hover~label{color:var(--ac)}
+footer{margin:50px 0 30px;color:var(--mu);text-align:center;font-size:.85rem}
+.badge{background:var(--ac);color:#000;border-radius:99px;padding:0 7px;font-size:.75rem;font-weight:700}
+.hide{display:none}
+input[type=checkbox]{width:auto}
+.card{position:relative;cursor:pointer}
+.dsc{position:absolute;top:10px;right:10px;background:var(--dg);color:#fff;font-weight:800;font-size:.78rem;padding:3px 9px;border-radius:99px;z-index:2}
+.old{text-decoration:line-through;color:var(--mu);font-size:.85rem;font-weight:400;margin-left:6px}
+.md{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(0,0,0,.55)}
+.md.on{display:flex}
+.mb{background:var(--sf);border-radius:22px;max-width:860px;width:100%;max-height:92vh;overflow:auto;padding:20px;position:relative;box-shadow:var(--sh)}
+.mx{position:absolute;top:12px;right:12px;z-index:3}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:700px){.pg{grid-template-columns:1fr}}
+.big{background:var(--bg);border-radius:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:7rem;overflow:hidden}
+.big img{width:100%;height:100%;object-fit:contain;transition:transform .12s ease-out}.big{cursor:zoom-in}
+.th{display:flex;gap:8px;margin-top:10px;overflow-x:auto}
+.th img{width:60px;height:60px;border-radius:10px;border:2px solid var(--br);object-fit:cover;cursor:pointer;flex:none}
+.th img.on{border-color:var(--pr)}
+.vb{font-size:.72rem;color:var(--pr2);background:#e6f6ee;border-radius:99px;padding:1px 8px}
+body{font-family:'Plus Jakarta Sans','Hind Siliguri',system-ui,-apple-system,'Segoe UI','Noto Sans Bengali',Roboto,sans-serif}
+header.top{background:color-mix(in srgb,var(--sf) 86%,transparent);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px)}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:38px;width:auto;max-width:96px;object-fit:contain;border-radius:8px;animation:pop .5s both}
+.logo b{font-weight:800;background:linear-gradient(90deg,var(--pr),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.srch{flex:1;max-width:560px}
+.srch input{border-radius:99px;padding:11px 18px;background:var(--bg);transition:box-shadow .2s,background .2s}
+.srch input:focus{box-shadow:0 0 0 4px rgba(15,123,79,.18);outline:none;background:var(--sf)}
+@media(max-width:760px){.nav{flex-wrap:wrap;height:auto;padding:8px 0;gap:8px}.srch{order:9;flex-basis:100%;max-width:none}.logo b{font-size:1.1rem}}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:none}}
+@keyframes grad{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-24px,22px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.6)}100%{transform:scale(1)}}
+@keyframes tin{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translate(-50%,0)}}
+#app>*,#ab>*{animation:up .5s both}
+#app>*:nth-child(2){animation-delay:.07s}#app>*:nth-child(3){animation-delay:.14s}#app>*:nth-child(4){animation-delay:.2s}
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#052e1f,#0f7b4f 42%,#18a36a 68%,#e8a317);background-size:220% 220%;padding:56px 36px}
+#app>.hero{animation:up .6s both,grad 14s ease infinite}
+.hero>:not(.blob){position:relative;z-index:1}
+.hero h1{font-weight:800;letter-spacing:-.5px}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.45;pointer-events:none;animation:float 9s ease-in-out infinite}
+.b1{width:260px;height:260px;background:#e8a317;right:-60px;top:-90px}
+.b2{width:220px;height:220px;background:#fff;left:38%;bottom:-130px;opacity:.22;animation-delay:-4s}
+.hero .btn{box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.tb{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 18px}
+.tb div{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:12px;display:flex;gap:10px;align-items:center;font-weight:600;font-size:.88rem;transition:.25s}
+.tb div:hover{transform:translateY(-3px);border-color:var(--pr);box-shadow:var(--sh)}
+.tb i{font-style:normal;font-size:1.4rem}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);pointer-events:none}
+.btn:hover::after{transform:translateX(120%);transition:transform .6s}
+.btn:active{transform:scale(.96)}
+.chip{transition:.2s}.chip:hover{border-color:var(--pr);transform:translateY(-2px)}
+.chip.on{box-shadow:0 6px 16px rgba(15,123,79,.3)}
+.sec{position:relative;padding-bottom:10px;font-size:1.45rem}
+.sec::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--pr),var(--ac))}
+.em{overflow:hidden}
+.em img,.em{transition:transform .45s}
+.card:hover .em img{transform:scale(1.09)}
+.card{transition:transform .25s,box-shadow .25s,border-color .25s}
+.card.in:hover,.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,90,60,.18);border-color:var(--pr)}
+.rvl{opacity:0}
+.rvl.in{opacity:1;animation:up .55s backwards;animation-delay:calc(var(--i,0)*50ms)}
+.dsc{animation:pulse 2s ease-in-out infinite}
+.badge.bump{animation:bump .4s}
+.mb{animation:pop .25s both}
+.md.on{animation:fade .2s both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.toast{animation:tin .25s both;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.kp div,.tab{transition:.2s}.kp div:hover{transform:translateY(-4px);border-color:var(--pr);box-shadow:var(--sh)}.tab:hover{border-color:var(--pr)}
+tr:hover td{background:rgba(15,123,79,.06)}
+footer{border-top:1px solid var(--br);padding-top:26px}
+footer .pay span{display:inline-block;margin:8px 4px;padding:4px 14px;border:1px solid var(--br);border-radius:99px;background:var(--sf);font-weight:600}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rvl{opacity:1}}
+.srch{position:relative}
+.srch .si{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--mu);pointer-events:none;transition:color .2s}
+.srch:focus-within .si{color:var(--pr)}
+.srch input{padding:12px 78px 12px 44px;border:1px solid var(--br);box-shadow:0 2px 10px rgba(15,60,40,.06)}
+.srch input:hover{border-color:var(--pr)}
+.srch kbd{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:.72rem;font-weight:600;line-height:1;color:var(--mu);border:1px solid var(--br);border-bottom-width:2px;border-radius:6px;padding:4px 8px;background:var(--sf);pointer-events:none}
+@media(hover:none){.srch kbd{display:none}}
+.sx{display:none;position:absolute;right:10px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;border:0;background:var(--br);color:var(--tx);cursor:pointer;align-items:center;justify-content:center;font-size:.7rem;padding:0}
+.sx:hover{background:var(--pr);color:#fff}
+.sg{position:absolute;left:0;right:0;top:calc(100% + 8px);background:var(--sf);border:1px solid var(--br);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.22);padding:8px;display:none;z-index:50;max-height:70vh;overflow:auto}
+.sg.on{display:block;animation:pop .18s both}
+.sgh{padding:8px 10px;color:var(--mu);font-size:.8rem;font-weight:600}
+.sgc{display:flex;flex-wrap:wrap;gap:6px;padding:4px 8px 10px}
+.sgq{border:1px solid var(--br);background:var(--bg);border-radius:99px;padding:6px 12px;cursor:pointer;font-size:.85rem}.sgq:hover{border-color:var(--pr);color:var(--pr)}
+.sgi{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:12px;cursor:pointer}
+.sgi:hover,.sgi.on{background:rgba(15,123,79,.1)}
+.sgm{width:46px;height:46px;border-radius:10px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.6rem;overflow:hidden;flex:none}
+.sgm img{width:100%;height:100%;object-fit:cover}
+.sgt{flex:1;min-width:0;display:flex;flex-direction:column}
+.sgt b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}.sgt small{color:var(--mu)}
+.sgp{font-weight:800;color:var(--pr);text-align:right;white-space:nowrap}.sgp s{display:block;color:var(--mu);font-weight:400;font-size:.75rem}
+.sgf{text-align:center;padding:10px;color:var(--pr);font-weight:700;cursor:pointer;border-top:1px solid var(--br);margin-top:4px;border-radius:0 0 12px 12px}
+.sgf:hover{background:rgba(15,123,79,.08)}
+mark{background:rgba(232,163,23,.35);color:inherit;border-radius:3px;padding:0 1px}
+.chips{scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 22px),transparent);padding-left:14px;padding-right:14px}
+.chips::-webkit-scrollbar{display:none}
+.ann{background:linear-gradient(90deg,var(--pr2),var(--pr));color:#fff;text-align:center;padding:8px 12px;font-size:.85rem;font-weight:600}
+.wab{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:24;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;font-size:1.6rem;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.3);animation:pulse 2.4s ease-in-out infinite}
+#mc{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:25;background:var(--pr);color:#fff;border-radius:16px;padding:14px 18px;justify-content:space-between;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.3);cursor:pointer;font-weight:700}
+.shr{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}.shr a,.shr button{border:1px solid var(--br);background:var(--bg);border-radius:99px;padding:6px 12px;font-size:.82rem;text-decoration:none;cursor:pointer;color:var(--tx)}
+.lph{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;margin:24px 0;padding:34px;border-radius:26px;background:linear-gradient(135deg,color-mix(in srgb,var(--lc,#0f7b4f) 14%,var(--sf)),var(--sf));border:1px solid var(--br);box-shadow:var(--sh)}
+.lph h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:0 0 12px;letter-spacing:-.5px}
+.lph p{color:var(--mu);font-size:1.05rem}
+.lpp{font-size:2rem;font-weight:800;color:var(--lc,var(--pr));margin:12px 0}.lpp s{font-size:1rem;color:var(--mu);font-weight:400;margin-left:8px}
+.dsc2{background:var(--dg);color:#fff;border-radius:99px;font-size:.8rem;padding:2px 10px;margin-left:8px}
+.lpr img{width:100%;border-radius:22px;max-height:460px;object-fit:cover;box-shadow:var(--sh);animation:float2 6s ease-in-out infinite}
+.lpe{font-size:9rem;text-align:center}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.lpb{background:var(--lc,var(--pr));font-size:1.05rem;padding:14px 26px;animation:pulse 2.2s ease-in-out infinite}
+.lpc{display:flex;gap:10px;margin:14px 0}.lpc div{background:var(--lc,var(--pr));color:#fff;border-radius:12px;padding:8px 12px;text-align:center;min-width:58px}.lpc b{display:block;font-size:1.3rem}.lpc small{opacity:.85}
+.lpg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0 0 24px}
+.lpg div{background:var(--sf);border:1px solid var(--br);border-radius:16px;padding:16px;font-weight:600;display:flex;gap:10px;align-items:center}
+.lpg i{font-style:normal;color:#fff;background:var(--lc,var(--pr));border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;flex:none;font-size:.8rem}
+.lpf{max-width:620px;margin:0 auto 28px}
+.lpo{display:flex;align-items:center;gap:10px;border:1px solid var(--br);border-radius:14px;padding:8px 12px;cursor:pointer}
+.lpo:has(input:checked){border-color:var(--lc,var(--pr));background:color-mix(in srgb,var(--lc,#0f7b4f) 10%,transparent)}
+.lpo input{width:auto}
+.lpfix{display:none}
+.f2{display:grid}
+@media(max-width:760px){.lph{grid-template-columns:1fr;padding:22px}.lpr{order:-1}.lpfix{display:block;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:25;background:var(--lc,var(--pr));font-size:1.05rem;padding:14px}}
+@media(max-width:640px){
+ .wrap{padding:0 12px}.hero{padding:34px 20px;border-radius:20px}
+ .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+ .card{padding:10px;border-radius:16px}.em{font-size:2.4rem;padding:8px 0}.em img{height:120px}
+ .pn{font-size:.9rem}.btn{min-height:42px}.btn.s{min-height:34px}
+ .md{padding:0;align-items:flex-end}.mb{max-height:94vh;border-radius:22px 22px 0 0;padding:16px}
+ .drawer{width:100%}.f2{grid-template-columns:1fr}
+ #mc.on{display:flex}.wab{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+ footer{margin-bottom:90px}.nav .btn.s{padding:6px 9px}#lg{max-width:84px}
+ .sec{font-size:1.25rem}.tabs{margin:10px 0}
+}
+.chb{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:26;width:58px;height:58px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--pr),var(--pr2));color:#fff;font-size:1.6rem;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.3);transition:transform .2s}.chb:hover{transform:scale(1.08)}
+.wab{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+.chp{position:fixed;right:16px;bottom:calc(88px + env(safe-area-inset-bottom,0px));width:340px;max-width:calc(100vw - 24px);height:470px;max-height:calc(100vh - 120px);background:var(--sf);border:1px solid var(--br);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.28);z-index:45;display:none;flex-direction:column;overflow:hidden}
+.chp.on{display:flex;animation:pop .22s both}
+.chh{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:linear-gradient(120deg,var(--pr2),var(--pr));color:#fff}
+.chh .btn{background:rgba(255,255,255,.2);color:#fff;border:0}
+.chm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.cm{max-width:86%;padding:9px 13px;border-radius:16px;font-size:.92rem;animation:up .25s both;white-space:pre-wrap}
+.cm.b{background:var(--sf);border:1px solid var(--br);align-self:flex-start;border-bottom-left-radius:4px}
+.cm.u{background:var(--pr);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chq{display:flex;gap:6px;overflow-x:auto;padding:8px 10px;border-top:1px solid var(--br);scrollbar-width:none}
+.chq button,.chl a,.chl button{white-space:nowrap;border:1px solid var(--br);background:var(--sf);border-radius:99px;padding:6px 12px;font-size:.8rem;cursor:pointer;color:var(--tx);text-decoration:none}
+.chq button:hover,.chl a:hover,.chl button:hover{border-color:var(--pr);color:var(--pr)}
+.chl{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.chi{display:flex;gap:8px;padding:10px;border-top:1px solid var(--br)}
+@media(max-width:640px){.chb{bottom:calc(84px + env(safe-area-inset-bottom,0px))}.wab{bottom:calc(152px + env(safe-area-inset-bottom,0px))}.chp{left:8px;right:8px;width:auto;bottom:calc(8px + env(safe-area-inset-bottom,0px));max-height:75vh}}
+</style>
+</head>
+<body>
+<div class="ann" id="ann" style="display:none"></div>
+<header class="top"><div class="wrap nav">
+<div class="logo" onclick="go('')"><b>FreshMart</b></div><div class="srch" id="sb"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="text" role="combobox" aria-expanded="false" aria-controls="sg" oninput="onSearch()" onfocus="sgOpen()" onkeydown="sgKey(event)" aria-label="Search" autocomplete="off" enterkeyhint="search"><kbd id="kb">/</kbd><button class="sx" id="sx" type="button" aria-label="Clear" onclick="sgClear()">✕</button><div class="sg" id="sg" role="listbox"></div></div><div class="sp"></div>
+<select id="lg" onchange="setLg(this.value)" aria-label="Language" style="width:auto;padding:6px 8px"></select><button class="btn o s" id="thb" onclick="toggleTh()" aria-label="Day / Night">🌙</button><button class="btn o s" onclick="go(location.hash==='#admin'?'':'admin')" id="swb">🔐 Admin</button>
+<button class="btn" onclick="direct=null;openCart()" id="cartb">🛒 কার্ট <span class="badge" id="cc">0</span></button>
+</div></header>
+<main class="wrap" id="app"></main>
+<footer id="foot"></footer>
+<div class="ov" id="ov" onclick="closeAll()"></div>
+<div class="drawer" id="dr"></div>
+<div id="mc" onclick="direct=null;openCart()"></div>
+<button id="chb" class="chb" onclick="chatToggle()" aria-label="Chat">💬</button><div id="chp" class="chp" role="dialog"></div>
+<a id="wab" class="wab" target="_blank" rel="noopener" aria-label="WhatsApp" style="display:none">💬</a>
+<div class="md" id="md" onclick="if(event.target===this)closeM()"><div class="mb" id="mb"></div></div>
+<div class="toast" id="ts"></div>
+
+<script>
+// ---------- helpers ----------
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const K='fm_v2';
+const seed=()=>({
+ shop:{name:'FreshMart',hero:'',sub:'',phone:'01700-000000',addr:'Dhanmondi, Dhaka',pass:'admin123',free:500,fee:60},
+ cats:['Women Dress','Men Dress','Women Shoes','Men Shoes','Watches','Phones','Gadgets','Books','Headphones','Cosmetics'],
+ products:[
+ {id:1,n:'Cotton Panjabi',c:'Men Dress',p:1450,cost:1000,s:25,e:'👘'},{id:13,n:'Formal Shirt',c:'Men Dress',p:1250,cost:850,s:30,e:'👔'},{id:2,n:'Summer Dress',c:'Women Dress',p:1890,cost:1300,s:18,e:'👗'},{id:14,n:'Silk Saree',c:'Women Dress',p:3800,cost:2900,s:12,e:'🥻'},
+ {id:4,n:'Leather Sandals',c:'Women Shoes',p:1750,cost:1200,s:3,e:'👡'},{id:16,n:'High Heels',c:'Women Shoes',p:2300,cost:1650,s:14,e:'👠'},{id:3,n:'Running Shoes',c:'Men Shoes',p:3200,cost:2400,s:30,e:'👟'},{id:15,n:'Classic Loafers',c:'Men Shoes',p:3400,cost:2500,s:16,e:'👞'},
+ {id:5,n:'Classic Wrist Watch',c:'Watches',p:4500,cost:3300,s:15,e:'⌚',disc:15,desc:'Elegant stainless steel watch with water resistance and a 1-year warranty.'},{id:6,n:'Smartphone 128GB',c:'Phones',p:24990,cost:21500,s:12,e:'📱'},
+ {id:7,n:'Power Bank 20000mAh',c:'Gadgets',p:2200,cost:1600,s:40,e:'🔋'},{id:8,n:'Bluetooth Speaker',c:'Gadgets',p:2800,cost:2000,s:0,e:'🔊'},
+ {id:9,n:'Bestseller Novel',c:'Books',p:420,cost:300,s:60,e:'📚'},{id:10,n:'Wireless Headphones',c:'Headphones',p:3500,cost:2600,s:22,e:'🎧'},
+ {id:11,n:'Matte Lipstick',c:'Cosmetics',p:650,cost:420,s:50,e:'💄'},{id:12,n:'Face Cream',c:'Cosmetics',p:890,cost:600,s:35,e:'🧴'}],
+ orders:[],customers:{},reviews:[],lps:[],coupons:[],
+ couriers:['Pathao','Steadfast','RedX','Paperfly'],nid:1001,pid:17
+});
+const LG=[['en','English'],['bn','বাংলা'],['hi','हिन्दी'],['ja','日本語'],['ko','한국어'],['zh','中文'],['de','Deutsch'],['es','Español']];
+let LI=0;try{const s=localStorage.getItem('fm_lg');LI=LG.findIndex(x=>x[0]===s);if(LI<0)LI=Math.max(0,LG.findIndex(x=>x[0]===(navigator.language||'en').slice(0,2)))}catch(e){}
+const T={
+cart:['Cart','কার্ট','कार्ट','カート','장바구니','购物车','Warenkorb','Carrito'],
+add:['Add to cart','কার্টে যোগ','कार्ट में डालें','カートに追加','담기','加入购物车','In den Warenkorb','Añadir'],
+inS:['In stock','স্টকে আছে','स्टॉक में','在庫あり','재고 있음','有货','Auf Lager','En stock'],
+outS:['Out of stock','স্টকে নেই','स्टॉक खत्म','在庫なし','품절','缺货','Ausverkauft','Agotado'],
+na:['Unavailable','অনুপলব্ধ','अनुपलब्ध','購入不可','구매 불가','不可购买','Nicht verfügbar','No disponible'],
+srch:['🔍 Search products…','🔍 পণ্য খুঁজুন…','🔍 उत्पाद खोजें…','🔍 商品を検索…','🔍 상품 검색…','🔍 搜索商品…','🔍 Produkte suchen…','🔍 Buscar productos…'],
+all:['All','সব','सभी','すべて','전체','全部','Alle','Todo'],
+buy:['Shop now →','এখনই কিনুন →','अभी खरीदें →','今すぐ買う →','지금 구매 →','立即选购 →','Jetzt kaufen →','Comprar ahora →'],
+hero:['Quality products, best prices','সেরা মানের পণ্য, সেরা দাম','बेहतरीन उत्पाद, बेहतरीन दाम','高品質な商品を最安値で','품질 좋은 상품, 최고의 가격','优质商品，超值价格','Top-Qualität, beste Preise','Productos de calidad, mejores precios'],
+sub:['Fast home delivery across Bangladesh. Free delivery on big orders.','সারা বাংলাদেশে দ্রুত হোম ডেলিভারি। বড় অর্ডারে ডেলিভারি ফ্রি।','पूरे बांग्लादेश में तेज़ होम डिलीवरी। बड़े ऑर्डर पर डिलीवरी मुफ़्त।','バングラデシュ全国へ迅速にお届け。大口注文は送料無料。','방글라데시 전역 빠른 배송. 대량 주문 무료 배송.','孟加拉国全境快速送货上门，大额订单免运费。','Schnelle Lieferung in ganz Bangladesch. Kostenloser Versand bei großen Bestellungen.','Entrega rápida en todo Bangladés. Envío gratis en pedidos grandes.'],
+rvT:['Customer reviews','গ্রাহকদের মতামত','ग्राहकों की राय','お客様の声','고객 후기','顾客评价','Kundenbewertungen','Opiniones de clientes'],
+noRev:['No reviews yet. Be the first!','এখনো কোনো রিভিউ নেই। প্রথম রিভিউ আপনি দিন!','अभी कोई समीक्षा नहीं। पहली समीक्षा आप दें!','まだレビューはありません。最初の投稿をどうぞ！','아직 후기가 없습니다. 첫 후기를 남겨주세요!','暂无评价，快来抢沙发！','Noch keine Bewertungen. Seien Sie der Erste!','Aún no hay reseñas. ¡Sé el primero!'],
+giveFb:['Share your feedback','আপনার মতামত দিন','अपनी राय दें','ご意見をお寄せください','의견을 남겨주세요','留下您的评价','Feedback geben','Deja tu opinión'],
+yName:['Your name','আপনার নাম','आपका नाम','お名前','이름','您的姓名','Ihr Name','Tu nombre'],
+yExp:['Write your experience…','আপনার অভিজ্ঞতা লিখুন…','अपना अनुभव लिखें…','ご感想を書いてください…','경험을 적어주세요…','请写下您的体验…','Ihre Erfahrung…','Cuenta tu experiencia…'],
+send:['Submit review','রিভিউ জমা দিন','समीक्षा जमा करें','レビューを送信','후기 제출','提交评价','Bewertung senden','Enviar reseña'],
+yCart:['Your cart','আপনার কার্ট','आपका कार्ट','カート','내 장바구니','您的购物车','Ihr Warenkorb','Tu carrito'],
+empty:['Cart is empty 😌','কার্ট খালি 😌','कार्ट खाली है 😌','カートは空です 😌','장바구니가 비어 있습니다 😌','购物车是空的 😌','Warenkorb ist leer 😌','El carrito está vacío 😌'],
+subt:['Subtotal','সাবটোটাল','उप-योग','小計','소계','小计','Zwischensumme','Subtotal'],
+deliv:['Delivery','ডেলিভারি','डिलीवरी','送料','배송비','运费','Lieferung','Envío'],
+free:['Free','ফ্রি','मुफ़्त','無料','무료','免费','Gratis','Gratis'],
+total:['Total','মোট','कुल','合計','합계','总计','Gesamt','Total'],
+nPh:['Your name *','আপনার নাম *','आपका नाम *','お名前 *','이름 *','姓名 *','Name *','Nombre *'],
+pPh:['Mobile number * (01XXXXXXXXX)','মোবাইল নম্বর * (01XXXXXXXXX)','मोबाइल नंबर * (01XXXXXXXXX)','携帯番号 * (01XXXXXXXXX)','휴대폰 번호 * (01XXXXXXXXX)','手机号码 * (01XXXXXXXXX)','Handynummer * (01XXXXXXXXX)','Móvil * (01XXXXXXXXX)'],
+aPh:['Full address *','পূর্ণ ঠিকানা *','पूरा पता *','住所 *','전체 주소 *','详细地址 *','Vollständige Adresse *','Dirección completa *'],
+cod:['Cash on delivery','ক্যাশ অন ডেলিভারি','कैश ऑन डिलीवरी','代金引換','착불 결제','货到付款','Nachnahme','Pago contra entrega'],
+conf:['Confirm order','অর্ডার কনফার্ম করুন','ऑर्डर कन्फर्म करें','注文を確定','주문 확정','确认订单','Bestellung bestätigen','Confirmar pedido'],
+ok:['Order placed!','অর্ডার সফল!','ऑर्डर सफल!','ご注文ありがとうございます！','주문 완료!','下单成功！','Bestellung erfolgreich!','¡Pedido realizado!'],
+ordNo:['Order number','অর্ডার নম্বর','ऑर्डर नंबर','注文番号','주문 번호','订单号','Bestellnummer','Número de pedido'],
+dlR:['⬇️ Download receipt','⬇️ রসিদ ডাউনলোড','⬇️ रसीद डाउनलोड','⬇️ 領収書をダウンロード','⬇️ 영수증 다운로드','⬇️ 下载收据','⬇️ Beleg herunterladen','⬇️ Descargar recibo'],
+prR:['🖨️ Print receipt','🖨️ রসিদ প্রিন্ট','🖨️ रसीद प्रिंट','🖨️ 領収書を印刷','🖨️ 영수증 인쇄','🖨️ 打印收据','🖨️ Beleg drucken','🖨️ Imprimir recibo'],
+cont:['Continue shopping','শপিং চালিয়ে যান','खरीदारी जारी रखें','買い物を続ける','쇼핑 계속하기','继续购物','Weiter einkaufen','Seguir comprando'],
+added:['Added to cart','কার্টে যোগ হয়েছে','कार्ट में जोड़ा गया','カートに追加しました','장바구니에 담았습니다','已加入购物车','Zum Warenkorb hinzugefügt','Añadido al carrito'],
+needNA:['Enter name and address','নাম ও ঠিকানা দিন','नाम और पता दें','お名前と住所を入力してください','이름과 주소를 입력하세요','请填写姓名和地址','Name und Adresse eingeben','Introduce nombre y dirección'],
+badPh:['Enter a valid mobile number','সঠিক মোবাইল নম্বর দিন','सही मोबाइल नंबर दें','正しい携帯番号を入力してください','올바른 휴대폰 번호를 입력하세요','请输入有效手机号','Gültige Handynummer eingeben','Introduce un móvil válido'],
+noProd:['No products found','কোনো পণ্য পাওয়া যায়নি','कोई उत्पाद नहीं मिला','商品が見つかりません','상품이 없습니다','未找到商品','Keine Produkte gefunden','No se encontraron productos'],
+needRv:['Enter name, stars and comment','নাম, স্টার ও মন্তব্য দিন','नाम, स्टार और टिप्पणी दें','名前・星・コメントを入力してください','이름, 별점, 댓글을 입력하세요','请填写姓名、星级和评论','Name, Sterne und Kommentar angeben','Introduce nombre, estrellas y comentario'],
+thx:['Thank you! ✅','ধন্যবাদ! ✅','धन्यवाद! ✅','ありがとうございます！✅','감사합니다! ✅','谢谢！✅','Danke! ✅','¡Gracias! ✅'],
+shopB:['🏪 Shop','🏪 দোকান','🏪 दुकान','🏪 ショップ','🏪 쇼핑','🏪 商店','🏪 Shop','🏪 Tienda'],
+rno:['Receipt','রসিদ','रसीद','領収書','영수증','收据','Beleg','Recibo'],
+rdate:['Date','তারিখ','तारीख','日付','날짜','日期','Datum','Fecha'],
+rcust:['Customer','গ্রাহক','ग्राहक','お客様','고객','客户','Kunde','Cliente'],
+raddr:['Address','ঠিকানা','पता','住所','주소','地址','Adresse','Dirección'],
+rpay:['Payment','পেমেন্ট','भुगतान','支払い','결제','付款','Zahlung','Pago'],
+rcour:['Courier','কুরিয়ার','कूरियर','配送業者','택배','快递','Kurier','Mensajería'],
+sAll:['See all results','সব ফলাফল দেখুন','सभी परिणाम देखें','すべての結果を見る','모든 결과 보기','查看全部结果','Alle Ergebnisse anzeigen','Ver todos los resultados'],
+sNo:['No matching products','কোনো মিল পাওয়া যায়নি','कोई मेल नहीं मिला','一致する商品がありません','일치하는 상품이 없습니다','没有匹配的商品','Keine passenden Produkte','Sin coincidencias'],
+sCat:['Browse categories','ক্যাটাগরি ব্রাউজ করুন','श्रेणियाँ देखें','カテゴリーを見る','카테고리 둘러보기','浏览分类','Kategorien durchsuchen','Explorar categorías'],
+share:['Share','শেয়ার','शेयर','共有','공유','分享','Teilen','Compartir'],
+copied:['Link copied','লিংক কপি হয়েছে','लिंक कॉपी हुआ','リンクをコピーしました','링크 복사됨','链接已复制','Link kopiert','Enlace copiado'],
+coup:['Coupon','কুপন','कूपन','クーポン','쿠폰','优惠券','Gutschein','Cupón'],
+apply:['Apply','প্রয়োগ','लागू करें','適用','적용','应用','Einlösen','Aplicar'],
+cph:['Coupon code','কুপন কোড','कूपन कोड','クーポンコード','쿠폰 코드','优惠码','Gutscheincode','Código de cupón'],
+cbad:['Invalid or expired coupon','কুপন সঠিক নয়','अमान्य कूपन','無効なクーポン','유효하지 않은 쿠폰','无效优惠码','Ungültiger Gutschein','Cupón no válido'],
+cok:['Coupon applied','কুপন প্রয়োগ হয়েছে','कूपन लागू हुआ','クーポン適用','쿠폰 적용됨','优惠码已应用','Gutschein angewendet','Cupón aplicado'],
+orderNow:['Order now','এখনই অর্ডার করুন','अभी ऑर्डर करें','今すぐ注文','지금 주문','立即下单','Jetzt bestellen','Pedir ahora'],
+chooseP:['Choose product','পণ্য বাছুন','उत्पाद चुनें','商品を選択','상품 선택','选择商品','Produkt wählen','Elige producto'],
+chT:['Chat with us','আমাদের সাথে চ্যাট করুন','हमसे चैट करें','チャットで相談','채팅 문의','在线咨询','Chat mit uns','Chatea con nosotros'],
+chHi:['Hi! 👋 How can I help you today?','হ্যালো! 👋 আমি কীভাবে সাহায্য করতে পারি?','नमस्ते! 👋 मैं आपकी कैसे मदद कर सकता हूँ?','こんにちは！👋 ご用件をどうぞ。','안녕하세요! 👋 무엇을 도와드릴까요?','您好！👋 有什么可以帮您？','Hallo! 👋 Wie kann ich helfen?','¡Hola! 👋 ¿En qué puedo ayudarte?'],
+chPh:['Type a message…','মেসেজ লিখুন…','संदेश लिखें…','メッセージを入力…','메시지를 입력하세요…','输入消息…','Nachricht eingeben…','Escribe un mensaje…'],
+chDel:['Delivery info','ডেলিভারি তথ্য','डिलीवरी जानकारी','配送について','배송 안내','配送信息','Lieferinfo','Info de envío'],
+chDelA:['Delivery fee is {fee}. Free delivery on orders above {free}.','ডেলিভারি চার্জ {fee}। {free} এর বেশি অর্ডারে ডেলিভারি ফ্রি।','डिलीवरी शुल्क {fee} है। {free} से ऊपर के ऑर्डर पर डिलीवरी मुफ़्त।','送料は{fee}です。{free}以上のご注文は送料無料。','배송비는 {fee}입니다. {free} 이상 주문 시 무료 배송.','运费为{fee}，订单满{free}免运费。','Lieferkosten {fee}. Ab {free} kostenlos.','Envío {fee}. Gratis en pedidos superiores a {free}.'],
+chPay:['Payment methods','পেমেন্ট পদ্ধতি','भुगतान के तरीके','お支払い方法','결제 방법','支付方式','Zahlungsarten','Métodos de pago'],
+chPayA:['We accept Cash on delivery, bKash and Nagad.','ক্যাশ অন ডেলিভারি, bKash ও Nagad এ পেমেন্ট করা যায়।','कैश ऑन डिलीवरी, bKash और Nagad स्वीकार हैं।','代金引換、bKash、Nagadをご利用いただけます。','착불, bKash, Nagad 결제가 가능합니다.','支持货到付款、bKash 和 Nagad。','Wir akzeptieren Nachnahme, bKash und Nagad.','Aceptamos pago contra entrega, bKash y Nagad.'],
+chTrk:['Track my order','অর্ডার ট্র্যাক করুন','मेरा ऑर्डर ट्रैक करें','注文状況を確認','주문 조회','查询订单','Bestellung verfolgen','Seguir mi pedido'],
+chTrkQ:['Enter the phone number you used for the order','অর্ডারে দেওয়া ফোন নম্বরটি লিখুন','ऑर्डर में दिया फ़ोन नंबर लिखें','ご注文時の電話番号を入力してください','주문 시 입력한 전화번호를 입력하세요','请输入下单时的手机号','Telefonnummer der Bestellung eingeben','Introduce el teléfono del pedido'],
+chTrkNo:['No orders found for this number','এই নম্বরে কোনো অর্ডার পাওয়া যায়নি','इस नंबर पर कोई ऑर्डर नहीं मिला','この番号の注文は見つかりません','이 번호의 주문이 없습니다','未找到该号码的订单','Keine Bestellung zu dieser Nummer','No hay pedidos con este número'],
+chHum:['Talk to a person','মানুষের সাথে কথা বলুন','किसी व्यक्ति से बात करें','担当者と話す','상담원 연결','联系人工客服','Mit Mitarbeiter sprechen','Hablar con una persona'],
+chNo:['Sorry, I could not find that. Please talk to our team:','দুঃখিত, এটা খুঁজে পাইনি। আমাদের টিমের সাথে কথা বলুন:','क्षमा करें, यह नहीं मिला। हमारी टीम से बात करें:','見つかりませんでした。担当者にご連絡ください:','찾지 못했습니다. 상담원에게 문의해 주세요:','抱歉，没有找到。请联系我们的团队：','Leider nichts gefunden. Sprechen Sie mit unserem Team:','No lo encontré. Habla con nuestro equipo:'],
+chFound:['I found these products:','এই পণ্যগুলো পেয়েছি:','ये उत्पाद मिले:','こちらの商品が見つかりました:','다음 상품을 찾았습니다:','找到以下商品：','Diese Produkte gefunden:','Encontré estos productos:'],
+chSt:['Status','স্ট্যাটাস','स्थिति','状況','상태','状态','Status','Estado'],
+tb1:['Fast delivery','দ্রুত ডেলিভারি','तेज़ डिलीवरी','迅速配送','빠른 배송','极速配送','Schnelle Lieferung','Envío rápido'],
+tb2:['Secure payment','নিরাপদ পেমেন্ট','सुरक्षित भुगतान','安全な支払い','안전 결제','安全支付','Sichere Zahlung','Pago seguro'],
+tb3:['Genuine products','আসল পণ্য','असली उत्पाद','正規品','정품 보증','正品保证','Originalprodukte','Productos originales'],
+tb4:['24/7 support','২৪/৭ সাপোর্ট','24/7 सहायता','24時間サポート','24시간 지원','24/7 客服','24/7 Support','Soporte 24/7'],
+buyNow:['Buy now','এখনই কিনুন','अभी खरीदें','今すぐ購入','바로 구매','立即购买','Jetzt kaufen','Comprar ya'],
+desc:['Description','বিবরণ','विवरण','商品説明','상품 설명','商品详情','Beschreibung','Descripción'],
+verif:['Verified buyer','ভেরিফায়েড ক্রেতা','सत्यापित खरीदार','購入済み','구매 인증','已购买用户','Verifizierter Käufer','Comprador verificado'],
+rvProd:['Reviews of this product','এই পণ্যের রিভিউ','इस उत्पाद की समीक्षाएं','この商品のレビュー','이 상품 후기','本商品评价','Bewertungen zu diesem Produkt','Reseñas de este producto'],
+buyerOnly:['Only customers who bought this product can review it. Enter the phone number you ordered with.','শুধু যারা এই পণ্য কিনেছেন তারাই রিভিউ দিতে পারবেন। অর্ডারের সময় দেওয়া ফোন নম্বর লিখুন।','केवल इस उत्पाद के खरीदार समीक्षा दे सकते हैं। ऑर्डर में दिया फ़ोन नंबर लिखें।','この商品の購入者のみレビューできます。注文時の電話番号を入力してください。','이 상품을 구매한 고객만 후기를 작성할 수 있습니다. 주문 시 입력한 전화번호를 입력하세요.','仅购买过本商品的顾客可评价，请输入下单时的手机号。','Nur Käufer dieses Produkts können bewerten. Geben Sie die Telefonnummer Ihrer Bestellung ein.','Solo quienes compraron este producto pueden opinar. Introduce el teléfono de tu pedido.'],
+notBuyer:['No order with this product found for this number','এই নম্বরে এই পণ্যের কোনো অর্ডার পাওয়া যায়নি','इस नंबर पर इस उत्पाद का कोई ऑर्डर नहीं मिला','この番号でこの商品の注文は見つかりません','이 번호로 해당 상품 주문을 찾을 수 없습니다','未找到该号码购买此商品的订单','Keine Bestellung mit diesem Produkt für diese Nummer gefunden','No hay pedidos de este producto con este número'],
+phn:['Phone used for order','অর্ডারের ফোন নম্বর','ऑर्डर का फ़ोन नंबर','注文時の電話番号','주문 시 전화번호','下单手机号','Telefon der Bestellung','Teléfono del pedido'],
+noRvP:['No reviews for this product yet','এই পণ্যের এখনো রিভিউ নেই','इस उत्पाद की अभी कोई समीक्षा नहीं','この商品のレビューはまだありません','이 상품 후기가 아직 없습니다','暂无本商品评价','Noch keine Bewertungen für dieses Produkt','Aún no hay reseñas de este producto'],
+rthx:['Thank you! Visit again 💚','ধন্যবাদ! আবার আসবেন 💚','धन्यवाद! फिर आइए 💚','ありがとうございました 💚','감사합니다! 또 오세요 💚','谢谢惠顾！欢迎再来 💚','Danke! Bis bald 💚','¡Gracias! Vuelva pronto 💚']};
+const CN={'Women Dress':["Women's Dress",'মেয়েদের পোশাক','महिलाओं के कपड़े','レディース服','여성 의류','女装','Damenmode','Ropa de mujer'],'Men Dress':["Men's Dress",'ছেলেদের পোশাক','पुरुषों के कपड़े','メンズ服','남성 의류','男装','Herrenmode','Ropa de hombre'],'Women Shoes':["Women's Shoes",'মেয়েদের জুতা','महिलाओं के जूते','レディースシューズ','여성 신발','女鞋','Damenschuhe','Zapatos de mujer'],'Men Shoes':["Men's Shoes",'ছেলেদের জুতা','पुरुषों के जूते','メンズシューズ','남성 신발','男鞋','Herrenschuhe','Zapatos de hombre'],Dress:['Dress','পোশাক','कपड़े','衣類','의류','服装','Kleidung','Ropa'],Shoes:['Shoes','জুতা','जूते','靴','신발','鞋','Schuhe','Zapatos'],Watches:['Watches','ঘড়ি','घड़ियाँ','腕時計','시계','手表','Uhren','Relojes'],Phones:['Phones','ফোন','फ़ोन','スマートフォン','휴대폰','手机','Handys','Teléfonos'],Gadgets:['Gadgets','গ্যাজেট','गैजेट','ガジェット','가젯','数码配件','Gadgets','Gadgets'],Books:['Books','বই','किताबें','本','도서','图书','Bücher','Libros'],Headphones:['Headphones','হেডফোন','हेडफ़ोन','ヘッドホン','헤드폰','耳机','Kopfhörer','Auriculares'],Cosmetics:['Cosmetics','কসমেটিক্স','कॉस्मेटिक्स','コスメ','화장품','化妆品','Kosmetik','Cosméticos']};
+const CI={'Women Dress':'👗','Men Dress':'👔','Women Shoes':'👠','Men Shoes':'👟',Dress:'👗',Shoes:'👟',Watches:'⌚',Phones:'📱',Gadgets:'🔌',Books:'📚',Headphones:'🎧',Cosmetics:'💄'};
+const tr=k=>(T[k]||[k])[LI]||T[k][0];
+const cn=c=>CN[c]?CN[c][LI]:c;
+const ci=c=>CI[c]||'🛍️';
+const isDark=()=>{const r=document.documentElement.dataset.theme;return r?r==='dark':matchMedia('(prefers-color-scheme:dark)').matches};
+function thIcon(){$('#thb').textContent=isDark()?'☀️':'🌙'}
+function toggleTh(){const n=isDark()?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('fm_th',n)}catch(e){}thIcon()}
+try{const th=localStorage.getItem('fm_th');if(th)document.documentElement.dataset.theme=th}catch(e){}
+function setLg(v){LI=Math.max(0,LG.findIndex(x=>x[0]===v));try{localStorage.setItem('fm_lg',LG[LI][0])}catch(e){}route()}
+let D;try{D=JSON.parse(localStorage.getItem(K))||seed()}catch(e){D=seed()}
+D.lps=D.lps||[];D.coupons=D.coupons||[];
+(()=>{if(!D.cats.includes('Dress')&&!D.cats.includes('Shoes'))return;const m={1:'Men Dress',2:'Women Dress',3:'Men Shoes',4:'Women Shoes'};D.products.forEach(p=>{if(p.c==='Dress')p.c=m[p.id]&&m[p.id].includes('Dress')?m[p.id]:'Women Dress';else if(p.c==='Shoes')p.c=m[p.id]&&m[p.id].includes('Shoes')?m[p.id]:'Women Shoes'});D.cats=D.cats.flatMap(c=>c==='Dress'?['Women Dress','Men Dress']:c==='Shoes'?['Women Shoes','Men Shoes']:[c])})();
+let cart={};let cat='*';let direct=null;const src=()=>direct||cart;let tab='dash';let admin=false;
+try{admin=sessionStorage.getItem('fm_a')==='1'}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(D))}catch(e){toast('⚠️ সেভ হয়নি – ব্রাউজারের জায়গা ভরে গেছে')}};
+const tk=n=>'৳'+Number(n).toLocaleString('en-IN');
+function toast(m){const t=$('#ts');t.textContent=m;t.style.display='block';clearTimeout(toast.x);toast.x=setTimeout(()=>t.style.display='none',2600)}
+const star=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
+const avg=()=>D.reviews.length?(D.reviews.reduce((a,r)=>a+r.r,0)/D.reviews.length):0;
+const opt=k=>D.shop[k]!==false;
+const pp=p=>Math.round(p.p*(1-(p.disc||0)/100));
+const prRev=id=>D.reviews.filter(r=>r.pid===id);
+const IMG={};let idb=null;
+const resolve=u=>IMG[u]||u;
+const imgOk=u=>{u=resolve(u);return !!u&&String(u).startsWith('data:image/')};
+const rawImgs=p=>[p.img,...(p.gal||[])].filter(imgOk);
+const allImgs=p=>rawImgs(p).map(resolve);
+const safeUrl=u=>/^https?:\/\//i.test(u||'')?u:'';
+function idbOpen(){return new Promise(ok=>{try{const r=indexedDB.open('fm_img',1);r.onupgradeneeded=()=>r.result.createObjectStore('i');r.onsuccess=()=>{idb=r.result;ok()};r.onerror=()=>ok()}catch(e){ok()}})}
+function idbAll(){return new Promise(ok=>{if(!idb)return ok();try{const q=idb.transaction('i').objectStore('i').openCursor();q.onsuccess=()=>{const c=q.result;if(c){IMG[c.key]=c.value;c.continue()}else ok()};q.onerror=()=>ok()}catch(e){ok()}})}
+function idbPut(k,v){return new Promise(ok=>{if(!idb)return ok(false);try{const tx=idb.transaction('i','readwrite');tx.objectStore('i').put(v,k);tx.oncomplete=()=>ok(true);tx.onerror=()=>ok(false);tx.onabort=()=>ok(false)}catch(e){ok(false)}})}
+async function putImg(u){const id='i'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);IMG[id]=u;return (await idbPut(id,u))?id:u}
+async function migrateImgs(){let ch=false;const mv=async u=>{if(typeof u==='string'&&u.startsWith('data:image/')){const r=await putImg(u);if(r!==u)ch=true;return r}return u};
+ for(const p of D.products){if(p.img)p.img=await mv(p.img);if(p.gal)for(let i=0;i<p.gal.length;i++)p.gal[i]=await mv(p.gal[i])}
+ if(D.shop.logo)D.shop.logo=await mv(D.shop.logo);
+ for(const l of D.lps)if(l.img)l.img=await mv(l.img);
+ if(ch)save()}
+const avgOf=rs=>rs.length?rs.reduce((a,r)=>a+r.r,0)/rs.length:0;
+function closeM(){$('#md').classList.remove('on')}
+function go(h){location.hash=h;route()}
+function closeAll(){direct=null;$('#dr').classList.remove('on');$('#ov').classList.remove('on')}
+function drawer(h){$('#dr').innerHTML=h;$('#dr').classList.add('on');$('#ov').classList.add('on')}
+
+// ---------- download (receipt / excel) ----------
+function anchorSave(name,data){try{const u=URL.createObjectURL(data),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);return true}catch(e){toast('Print ব্যবহার করুন');return false}}
+async function saveFile(name,data){
+ if(typeof claude==='undefined'||!claude.use)return anchorSave(name,data);
+ try{const dl=await claude.use('downloads');
+  if(!dl)return anchorSave(name,data);
+  await dl.save({filename:name,data});return true}
+ catch(e){if(e&&e.code!=='declined')toast('ডাউনলোড হয়নি: '+(e.message||e.code||''));return false}
+}
+let xl;function loadX(){return xl||(xl=new Promise((ok,no)=>{if(window.XLSX)return ok();const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';s.onload=ok;s.onerror=no;document.head.appendChild(s)}))}
+async function exportX(kind){
+ try{await loadX()}catch(e){return toast('Excel লাইব্রেরি লোড হয়নি')}
+ const wb=XLSX.utils.book_new();const add=(n,a)=>XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(a.length?a:[{}]),n);
+ const O=()=>D.orders.map(o=>({'অর্ডার':o.id,'তারিখ':o.date,'গ্রাহক':o.name,'ফোন':o.phone,'ঠিকানা':o.addr,'আইটেম':o.items.map(i=>i.n+' x'+i.q).join(', '),'সাবটোটাল':o.sub,'ডেলিভারি':o.fee,'মোট':o.total,'লাভ':o.profit,'পেমেন্ট':o.pay,'কুপন':o.coupon||'','কুপন ছাড়':o.cd||0,'সোর্স':o.src||'Store','স্ট্যাটাস':o.status,'কুরিয়ার':o.courier||'','ট্র্যাকিং':o.track||''}));
+ const C=()=>Object.values(D.customers).map(c=>({'নাম':c.name,'ফোন':c.phone,'ঠিকানা':c.addr,'অর্ডার সংখ্যা':c.orders,'মোট ক্রয়':c.spent,'সর্বশেষ অর্ডার':c.last}));
+ const S=()=>D.products.map(p=>({'ID':p.id,'পণ্য':p.n,'ক্যাটাগরি':p.c,'ক্রয়মূল্য':p.cost,'বিক্রয়মূল্য':p.p,'ছাড় %':p.disc||0,'স্টক':p.s,'স্টক মূল্য':p.s*p.cost}));
+ if(kind==='orders'||kind==='all')add('Orders',O());
+ if(kind==='cust'||kind==='all')add('Customers',C());
+ if(kind==='stock'||kind==='all')add('Stock',S());
+ if(kind==='all')add('Reviews',D.reviews.map(r=>({'নাম':r.name,'স্টার':r.r,'মন্তব্য':r.t,'তারিখ':r.d})));
+ const out=XLSX.write(wb,{bookType:'xlsx',type:'array'});
+ if(await saveFile(`freshmart-${kind}-${new Date().toISOString().slice(0,10)}.xlsx`,new Blob([out],{type:'application/octet-stream'})))toast('Excel ফাইল রেডি ✅');
+}
+function receiptHTML(o){
+ return `<!DOCTYPE html><html lang="${LG[LI][0]}"><head><meta charset="utf-8"><title>Receipt ${o.id}</title><style>body{font-family:system-ui,sans-serif;max-width:380px;margin:20px auto;padding:10px;color:#111}h2{text-align:center;margin:0}p{margin:3px 0;font-size:13px}table{width:100%;font-size:13px;border-collapse:collapse;margin:10px 0}td{padding:4px 0;border-bottom:1px dashed #bbb}.r{text-align:right}.t{font-weight:700;font-size:15px}</style></head><body>${imgOk(D.shop.logo)?`<p style="text-align:center"><img src="${esc(resolve(D.shop.logo))}" style="height:50px"></p>`:''}<h2>${esc(D.shop.name)}</h2><p style="text-align:center">${esc(D.shop.addr)} | ${esc(D.shop.phone)}</p><hr><p><b>${tr('rno')}:</b> #${o.id}</p><p><b>${tr('rdate')}:</b> ${esc(o.date)}</p><p><b>${tr('rcust')}:</b> ${esc(o.name)} (${esc(o.phone)})</p><p><b>${tr('raddr')}:</b> ${esc(o.addr)}</p><table>${o.items.map(i=>`<tr><td>${esc(i.n)} × ${i.q}</td><td class="r">${tk(i.p*i.q)}</td></tr>`).join('')}<tr><td>${tr('subt')}</td><td class="r">${tk(o.sub)}</td></tr>${o.cd?`<tr><td>${tr('coup')} ${esc(o.coupon)}</td><td class="r">−${tk(o.cd)}</td></tr>`:''}<tr><td>${tr('deliv')}</td><td class="r">${tk(o.fee)}</td></tr><tr class="t"><td>${tr('total')}</td><td class="r">${tk(o.total)}</td></tr></table><p>${tr('rpay')}: ${esc(o.pay==='COD'?tr('cod'):o.pay)}</p>${o.track?`<p>${tr('rcour')}: ${esc(o.courier)} | ${esc(o.track)}</p>`:''}<p style="text-align:center;margin-top:14px">${tr('rthx')}</p></body></html>`}
+async function dlReceipt(id){const o=D.orders.find(x=>x.id==id);if(!o)return;if(await saveFile(`receipt-${o.id}.html`,new Blob([receiptHTML(o)],{type:'text/html'})))toast('রসিদ ডাউনলোড হয়েছে ✅')}
+function prReceipt(id){const o=D.orders.find(x=>x.id==id);const f=document.createElement('iframe');f.style.cssText='position:fixed;width:0;height:0;border:0';f.srcdoc=receiptHTML(o);f.onload=()=>{try{f.contentWindow.print()}catch(e){toast('Print সাপোর্ট নেই')}};document.body.appendChild(f);setTimeout(()=>f.remove(),60000)}
+
+// ---------- cart ----------
+let coupon=null;
+const cnt=()=>{const n=Object.values(cart).reduce((a,b)=>a+b,0);setTimeout(updMC,0);return n};
+function add(id,n=1){const p=D.products.find(x=>x.id===id);if(!p||p.s<(cart[id]||0)+n)return toast(tr('outS'));cart[id]=(cart[id]||0)+n;const b=$('#cc');b.textContent=cnt();b.classList.remove('bump');void b.offsetWidth;b.classList.add('bump');toast(tr('added'))}
+function chg(id,d){const p=D.products.find(x=>x.id===id),c=src();const n=(c[id]||0)+d;if(n<=0)delete c[id];else if(n<=p.s)c[id]=n;else toast(tr('outS'));if(direct&&!Object.keys(direct).length){closeAll();return}$('#cc').textContent=cnt();openCart()}
+function totals(){let sub=0;const c=src();for(const id in c){const p=D.products.find(x=>x.id==id);sub+=pp(p)*c[id]}const fee=sub===0||sub>=D.shop.free?0:D.shop.fee;const cp=coupon&&sub>=(coupon.min||0)?coupon:null,cd=cp?Math.round(sub*cp.pct/100):0;return{sub,fee,cd,cp,total:sub-cd+fee}}
+function openCart(){
+ const c=src(),ids=Object.keys(c);const t=totals();
+ drawer(`<div class="row"><h3 style="margin:0">🛒 ${tr('yCart')}</h3><button class="btn o s" onclick="closeAll()">✕</button></div>`+
+ (ids.length?ids.map(id=>{const p=D.products.find(x=>x.id==id);return `<div class="row"><div>${esc(p.e)} ${esc(p.n)}<br><small>${tk(pp(p))}</small></div><div><button class="btn o s" onclick="chg(${p.id},-1)">−</button> ${c[id]} <button class="btn o s" onclick="chg(${p.id},1)">+</button></div></div>`}).join('')+
+ `<div style="display:flex;gap:8px;margin:10px 0"><input id="cpn" placeholder="${tr('cph')}" value="${coupon?esc(coupon.code):''}"><button class="btn o s" onclick="applyCp()">${tr('apply')}</button></div><p>${tr('subt')}: <b>${tk(t.sub)}</b>${t.cd?`<br>${tr('coup')}: <b style="color:var(--dg)">−${tk(t.cd)}</b>`:''}<br>${tr('deliv')}: <b>${t.fee?tk(t.fee):tr('free')}</b><br>${tr('total')}: <b style="color:var(--pr)">${tk(t.total)}</b></p>
+ <div class="f"><input id="cn" placeholder="${tr('nPh')}" autocomplete="name"><input id="cp" placeholder="${tr('pPh')}" inputmode="tel" autocomplete="tel"><textarea id="ca" rows="2" placeholder="${tr('aPh')}" autocomplete="street-address"></textarea>
+ <select id="cy"><option value="COD">${tr('cod')}</option><option>bKash</option><option>Nagad</option></select></div>
+ <button class="btn" style="width:100%" onclick="place()">${tr('conf')}</button>`:`<p>${tr('empty')}</p>`))}
+function place(){
+ const n=$('#cn').value.trim(),p=$('#cp').value.trim(),a=$('#ca').value.trim();
+ if(!n||!a)return toast(tr('needNA'));
+ if(!/^01[3-9]\d{8}$/.test(p))return toast(tr('badPh'));
+ const t=totals(),items=[];let cost=0;
+ const cs=src();for(const id in cs){const pr=D.products.find(x=>x.id==id);if(pr.s<cs[id])return toast(pr.n+' – '+tr('outS'));items.push({id:pr.id,n:pr.n,p:pp(pr),q:cs[id]});cost+=pr.cost*cs[id]}
+ items.forEach(i=>D.products.find(x=>x.id===i.id).s-=i.q);
+ const o={id:D.nid++,date:new Date().toLocaleString('en-GB'),name:n,phone:p,addr:a,items,sub:t.sub,fee:t.fee,total:t.total,profit:t.sub-t.cd-cost,cd:t.cd,coupon:t.cp?t.cp.code:'',pay:$('#cy').value,status:'নতুন',courier:'',track:''};
+ D.orders.unshift(o);
+ const c=D.customers[p]||{name:n,phone:p,addr:a,orders:0,spent:0};
+ Object.assign(c,{name:n,addr:a,last:o.date});c.orders++;c.spent+=o.total;D.customers[p]=c;
+ coupon=null;save();if(direct)direct=null;else cart={};$('#cc').textContent=cnt();
+ drawer(`<h3>✅ ${tr('ok')}</h3><p>${tr('ordNo')} <b>#${o.id}</b></p><p>${tr('total')}: <b>${tk(o.total)}</b></p>
+ <button class="btn" style="width:100%;margin:6px 0" onclick="dlReceipt(${o.id})">${tr('dlR')}</button>
+ <button class="btn o" style="width:100%;margin:6px 0" onclick="prReceipt(${o.id})">${tr('prR')}</button>
+ <button class="btn o" style="width:100%" onclick="closeAll();route()">${tr('cont')}</button>`);
+}
+
+// ---------- storefront ----------
+function setCat(c){cat=c;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.c===c));shopList()}
+function onSearch(){if(location.hash==='#admin')return;shopList(true);sgOpen()}
+let sgI=-1,sgList=[];
+const hl=(t,q)=>{const i=q?t.toLowerCase().indexOf(q.toLowerCase()):-1;return i<0?esc(t):esc(t.slice(0,i))+'<mark>'+esc(t.slice(i,i+q.length))+'</mark>'+esc(t.slice(i+q.length))};
+const scrollPl=()=>{const e=$('#pl');e&&e.scrollIntoView({behavior:'smooth'})};
+function sgOpen(){const q=$('#q').value.trim(),g=$('#sg');$('#sx').style.display=q?'flex':'none';$('#kb').style.display=q?'none':'';
+ if(!q){sgList=[];g.innerHTML=`<div class="sgh">${tr('sCat')}</div><div class="sgc">${D.cats.map(c=>`<button type="button" class="sgq" onmousedown="event.preventDefault()" onclick="sgCat(this.dataset.c)" data-c="${esc(c)}">${ci(c)} ${esc(cn(c))}</button>`).join('')}</div>`}
+ else{const ql=q.toLowerCase();sgList=D.products.filter(p=>p.n.toLowerCase().includes(ql)||cn(p.c).toLowerCase().includes(ql)||p.c.toLowerCase().includes(ql));sgI=-1;
+  g.innerHTML=sgList.length?sgList.slice(0,6).map(p=>{const im=allImgs(p)[0];return `<div class="sgi" role="option" onmousedown="event.preventDefault()" onclick="sgPick(${p.id})"><span class="sgm">${im?`<img src="${esc(im)}" alt="">`:esc(p.e)}</span><span class="sgt"><b>${hl(p.n,q)}</b><small>${esc(cn(p.c))}</small></span><span class="sgp">${tk(pp(p))}${p.disc>0?`<s>${tk(p.p)}</s>`:''}</span></div>`}).join('')+`<div class="sgf" onmousedown="event.preventDefault()" onclick="sgAll()">${tr('sAll')} (${sgList.length}) →</div>`:`<div class="sgh">${tr('sNo')}</div>`}
+ g.classList.add('on');$('#q').setAttribute('aria-expanded','true')}
+function sgClose(){$('#sg').classList.remove('on');$('#q').setAttribute('aria-expanded','false');sgI=-1}
+function sgPick(id){sgClose();openP(id)}
+function sgAll(){sgClose();$('#q').blur();scrollPl()}
+function sgCat(c){sgClose();$('#q').value='';$('#sx').style.display='none';$('#kb').style.display='';setCat(c);scrollPl()}
+function sgClear(){$('#q').value='';onSearch();$('#q').focus()}
+function sgKey(e){const its=[...$('#sg').querySelectorAll('.sgi')];
+ if(e.key==='ArrowDown'||e.key==='ArrowUp'){if(!its.length)return;e.preventDefault();sgI=(sgI+(e.key==='ArrowDown'?1:-1)+its.length)%its.length;its.forEach((x,i)=>x.classList.toggle('on',i===sgI));its[sgI].scrollIntoView({block:'nearest'})}
+ else if(e.key==='Enter'){e.preventDefault();if(sgI>=0&&sgList[sgI])sgPick(sgList[sgI].id);else sgAll()}
+ else if(e.key==='Escape'){sgClose();e.target.blur()}}
+let slT=null,slD=1,slP=false;
+function autoSlide(){clearInterval(slT);const el=document.querySelector('.chips');if(!el||matchMedia('(prefers-reduced-motion:reduce)').matches)return;let tm;
+ const stop=()=>{slP=true;clearTimeout(tm)},resume=()=>{clearTimeout(tm);tm=setTimeout(()=>slP=false,2500)};
+ ['mouseenter','touchstart','focusin','wheel','pointerdown'].forEach(ev=>el.addEventListener(ev,stop,{passive:true}));
+ ['mouseleave','touchend','focusout','pointerup'].forEach(ev=>el.addEventListener(ev,resume,{passive:true}));
+ slP=false;slT=setInterval(()=>{if(slP||document.hidden||el.scrollWidth<=el.clientWidth+4)return;el.scrollLeft+=slD;if(el.scrollLeft+el.clientWidth>=el.scrollWidth-1)slD=-1;else if(el.scrollLeft<=0)slD=1},28)}
+function reveal(inst){const els=document.querySelectorAll('.rvl:not(.in)');if(inst||typeof IntersectionObserver==='undefined'){els.forEach(e=>e.classList.add('in'));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06});els.forEach(e=>io.observe(e))}
+function countUp(){document.querySelectorAll('.kp b').forEach(b=>{const m=b.textContent.match(/^(\D*)([\d,]+(?:\.\d+)?)(.*)$/);if(!m)return;const dec=(m[2].split('.')[1]||'').length,end=parseFloat(m[2].replace(/,/g,'')),t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/900),v=end*(1-Math.pow(1-k,3));b.textContent=m[1]+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-IN'))+m[3];if(k<1)requestAnimationFrame(f)})(t0)})}
+function shrinkLogo(file,max=300){return new Promise((ok,no)=>{if(!/^image\/(jpeg|png|webp)$/.test(file.type))return no('type');const r=new FileReader();r.onerror=()=>no('read');r.onload=()=>{const im=new Image();im.onerror=()=>no('img');im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height));const c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/png'))};im.src=r.result};r.readAsDataURL(file)})}
+async function upLogo(el){const f=el.files[0];if(!f)return;try{D.shop.logo=await putImg(await shrinkLogo(f));save();toast('লোগো আপডেট ✅');route()}catch(e){toast('শুধু JPG / PNG / WebP দিন')}}
+function shop(){
+ const q=$('#q')?.value||'';const a=avg();const S=D.shop;
+ $('#app').innerHTML=`<section class="hero"><i class="blob b1"></i><i class="blob b2"></i><h1>${esc(S.hero||tr('hero'))}</h1><p>${esc(S.sub||tr('sub'))}</p><button class="btn" onclick="document.getElementById('pl').scrollIntoView({behavior:'smooth'})">${tr('buy')}</button></section><div class="tb"><div><i>🚚</i>${tr('tb1')}</div><div><i>🔒</i>${tr('tb2')}</div><div><i>✅</i>${tr('tb3')}</div><div><i>💬</i>${tr('tb4')}</div></div>
+ 
+ <div class="chips">${['*',...D.cats].map(c=>`<div class="chip ${c===cat?'on':''}" data-c="${esc(c)}" onclick="setCat(this.dataset.c)">${c==='*'?tr('all'):ci(c)+' '+esc(cn(c))}</div>`).join('')}</div>
+ <div id="pl"></div>
+ <h2 class="sec">⭐ ${tr('rvT')} ${a?`<small class="stars">${star(a)}</small> <small style="color:var(--mu)">${a.toFixed(1)} (${D.reviews.length})</small>`:''}</h2>
+ <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${D.reviews.slice(0,6).map(r=>`<div class="card"><div class="stars">${star(r.r)}</div><div>${esc(r.t)}</div><div class="pc">— ${esc(r.name)}, ${esc(r.d)}</div></div>`).join('')||`<p>${tr('noRev')}</p>`}</div>
+ <div class="panel" style="margin-top:18px"><b>${tr('giveFb')}</b>
+ <div class="f"><input id="rn" placeholder="${tr('yName')}" maxlength="40"><div class="rs">${[5,4,3,2,1].map(i=>`<input type="radio" name="st" id="s${i}" value="${i}"><label for="s${i}">★</label>`).join('')}</div><textarea id="rt" rows="2" maxlength="300" placeholder="${tr('yExp')}"></textarea><button class="btn" onclick="review()">${tr('send')}</button></div></div>`;
+ shopList();autoSlide();
+}
+function pcard(p,ix=0){const im=allImgs(p)[0],d=p.disc>0,av=avgOf(prRev(p.id));
+return `<div class="card rvl" style="--i:${ix%12}" onclick="openP(${p.id})">${d?`<span class="dsc">-${p.disc}%</span>`:''}<div class="em ${im?'has':''}">${im?`<img src="${esc(im)}" alt="${esc(p.n)}" loading="lazy">`:esc(p.e)}</div><div class="pn">${esc(p.n)}</div><div class="pc">${esc(cn(p.c))}${av?` · <span class="stars" style="letter-spacing:0">★</span> ${av.toFixed(1)}`:''}</div><div class="pr">${tk(pp(p))}${d?`<span class="old">${tk(p.p)}</span>`:''}</div>${p.s>0?`<span class="tag ok">${tr('inS')}</span><button class="btn s" onclick="event.stopPropagation();add(${p.id})">+ ${tr('add')}</button>`:`<span class="tag">${tr('outS')}</span><button class="btn s" disabled style="opacity:.4">${tr('na')}</button>`}</div>`}
+let curI=0,curQ=1,curPid=0;
+function zoomM(e,el){const im=el.querySelector('img');if(!im||matchMedia('(hover:none)').matches)return;const r=el.getBoundingClientRect();im.style.transformOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%';im.style.transform='scale(2.3)'}
+function zoomOff(el){const im=el.querySelector('img');if(im)im.style.transform=''}
+function zoomTap(el){if(!matchMedia('(hover:none)').matches)return;const im=el.querySelector('img');if(im)im.style.transform=im.style.transform?'':'scale(2.3)'}
+function zoomT(e,el){const im=el.querySelector('img');if(!im||!im.style.transform)return;const r=el.getBoundingClientRect(),t=e.touches[0];im.style.transformOrigin=((t.clientX-r.left)/r.width*100)+'% '+((t.clientY-r.top)/r.height*100)+'%'}
+function qtyChg(d){const p=D.products.find(x=>x.id===curPid);curQ=Math.max(1,Math.min(p.s||1,curQ+d));$('#qv').textContent=curQ}
+function addQ(id){add(id,curQ)}
+function buyNow(id){const p=D.products.find(x=>x.id===id);if(!p||p.s<curQ)return toast(tr('outS'));closeM();direct={[id]:curQ};openCart()}
+function openP(id,i){const p=D.products.find(x=>x.id===id);if(!p)return;curI=i||0;curPid=id;if(i===undefined)curQ=1;const ims=allImgs(p),d=p.disc>0,rs=prRev(id),av=avgOf(rs);
+ const big=ims.length?`<img src="${esc(ims[curI]||ims[0])}" alt="${esc(p.n)}">`:esc(p.e);
+ const th=ims.length>1?`<div class="th">${ims.map((u,k)=>`<img src="${esc(u)}" alt="" class="${k===curI?'on':''}" onclick="openP(${id},${k})">`).join('')}</div>`:'';
+ $('#mb').innerHTML=`<button class="btn o s mx" onclick="closeM()">✕</button><div class="pg"><div><div class="big" onmousemove="zoomM(event,this)" onmouseleave="zoomOff(this)" onclick="zoomTap(this)" ontouchmove="zoomT(event,this)">${big}</div>${th}</div><div><div class="pc">${ci(p.c)} ${esc(cn(p.c))}</div><h2 style="margin:4px 0">${esc(p.n)}</h2>${av?`<div><span class="stars">${star(av)}</span> ${av.toFixed(1)} (${rs.length})</div>`:''}<div class="pr" style="font-size:1.7rem;margin:8px 0">${tk(pp(p))}${d?`<span class="old">${tk(p.p)}</span> <span class="tag" style="font-size:.8rem">-${p.disc}%</span>`:''}</div>${p.s>0?`<span class="tag ok">${tr('inS')}</span>`:`<span class="tag">${tr('outS')}</span>`}${p.desc?`<h4 style="margin:14px 0 4px">${tr('desc')}</h4><p style="white-space:pre-wrap;margin:0">${esc(p.desc)}</p>`:''}<div style="display:flex;align-items:center;gap:12px;margin-top:16px"><button class="btn o s" onclick="qtyChg(-1)">−</button><b id="qv">${curQ}</b><button class="btn o s" onclick="qtyChg(1)">+</button></div><div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap"><button class="btn o" style="flex:1;${p.s>0?'':'opacity:.4'}" ${p.s>0?'':'disabled'} onclick="addQ(${id})">🛒 ${tr('add')}</button><button class="btn" style="flex:1;background:var(--ac);color:#000;${p.s>0?'':'opacity:.4'}" ${p.s>0?'':'disabled'} onclick="buyNow(${id})">⚡ ${tr('buyNow')}</button></div><div class="shr"><small>${tr('share')}:</small><a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl(id))}">Facebook</a><a target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(p.n+' '+shareUrl(id))}">WhatsApp</a><button type="button" onclick="cpLink(${id})">🔗</button></div></div></div>${opt('showRev')?revBlock(p,rs):''}`;
+ $('#md').classList.add('on')}
+function revBlock(p,rs){return `<h3 style="margin:22px 0 8px">⭐ ${tr('rvProd')}</h3>${rs.map(r=>`<div class="row" style="align-items:flex-start"><div><span class="stars">${star(r.r)}</span> <b>${esc(r.name)}</b> ${r.v?`<span class="vb">✔ ${tr('verif')}</span>`:''}<br>${esc(r.t)}<br><small style="color:var(--mu)">${esc(r.d)}</small></div></div>`).join('')||`<p style="color:var(--mu)">${tr('noRvP')}</p>`}
+<div class="panel" style="margin-top:12px;box-shadow:none"><b>${tr('giveFb')}</b>${opt('buyerOnly')?`<p style="font-size:.85rem;color:var(--mu);margin:4px 0">${tr('buyerOnly')}</p>`:''}<div class="f">${opt('buyerOnly')?'':`<input id="mn" placeholder="${tr('yName')}" maxlength="40">`}<input id="mp" placeholder="${tr('phn')}" inputmode="tel"><div class="rs">${[5,4,3,2,1].map(i=>`<input type="radio" name="ms" id="m${i}" value="${i}"><label for="m${i}">★</label>`).join('')}</div><textarea id="mt" rows="2" maxlength="300" placeholder="${tr('yExp')}"></textarea><button class="btn" onclick="pRev(${p.id})">${tr('send')}</button></div></div>`}
+function pRev(id){const ph=$('#mp').value.trim(),t=$('#mt').value.trim(),r=document.querySelector('input[name=ms]:checked');
+ let name=($('#mn')?.value||'').trim(),v=false;
+ if(!t||!r)return toast(tr('needRv'));
+ if(ph&&D.orders.some(o=>o.phone===ph&&o.status!=='বাতিল'&&o.items.some(i=>i.id===id))){v=true;name=name||(D.customers[ph]||{}).name||'Customer'}
+ if(opt('buyerOnly')&&!v)return toast(tr('notBuyer'));
+ if(!name)return toast(tr('needRv'));
+ D.reviews.unshift({pid:id,name,t,r:+r.value,v,d:new Date().toLocaleDateString('en-GB')});save();toast(tr('thx'));openP(id,curI)}
+function shopList(inst){
+ const q=($('#q')?.value||'').toLowerCase();
+ const L=D.products.filter(p=>p.n.toLowerCase().includes(q)&&(cat==='*'||q||p.c===cat));
+ const cs=cat==='*'||q?[...new Set([...D.cats,...D.products.map(p=>p.c)])]:[cat];let h='';
+ cs.forEach(c=>{const x=L.filter(p=>p.c===c);if(x.length)h+=`<h2 class="sec rvl">${ci(c)} ${esc(cn(c))}</h2><div class="grid">${x.map(pcard).join('')}</div>`});
+ $('#pl').innerHTML=h||`<p>${tr('noProd')}</p>`;reveal(inst);
+}
+function review(){
+ const n=$('#rn').value.trim(),t=$('#rt').value.trim(),r=document.querySelector('input[name=st]:checked');
+ if(!n||!t||!r)return toast(tr('needRv'));
+ D.reviews.unshift({name:n,t,r:+r.value,d:new Date().toLocaleDateString('en-GB')});save();toast(tr('thx'));shop();
+}
+
+// ---------- admin ----------
+function login(){
+ $('#app').innerHTML=`<div class="panel" style="max-width:380px;margin:60px auto"><h2 style="margin-top:0">🔐 অ্যাডমিন লগইন</h2><div class="f"><input id="ap" type="password" placeholder="পাসওয়ার্ড" onkeydown="if(event.key==='Enter')doLogin()"><button class="btn" onclick="doLogin()">লগইন</button></div><small style="color:var(--mu)">ডিফল্ট পাসওয়ার্ড: <b>admin123</b> (Settings থেকে বদলান)</small></div>`}
+function doLogin(){if($('#ap').value===D.shop.pass){admin=true;try{sessionStorage.setItem('fm_a','1')}catch(e){}route()}else toast('ভুল পাসওয়ার্ড')}
+function logout(){admin=false;try{sessionStorage.removeItem('fm_a')}catch(e){}go('')}
+const shareUrl=id=>location.href.split('#')[0]+'#p-'+id;
+function cpLink(id){const u=shareUrl(id);if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(()=>toast(tr('copied')),()=>toast(u));else toast(u)}
+function applyCp(){const v=($('#cpn').value||'').trim().toUpperCase();if(!v){coupon=null;return openCart()}const c=D.coupons.find(x=>x.on!==false&&x.code===v);if(!c)return toast(tr('cbad'));coupon=c;toast(tr('cok'));openCart()}
+function updMC(){const el=$('#mc');if(!el)return;const n=Object.values(cart).reduce((a,b)=>a+b,0),sub=Object.keys(cart).reduce((a,id)=>{const p=D.products.find(x=>x.id==id);return a+(p?pp(p)*cart[id]:0)},0),h=location.hash;el.classList.toggle('on',n>0&&h!=='#admin'&&!h.startsWith('#lp-'));el.innerHTML=`<span>🛒 ${n}</span><b>${tk(sub)}</b><span>${tr('cart')} →</span>`}
+function updSEO(){const S=D.shop,h=location.hash,lm=h.match(/^#lp-([a-z0-9-]+)$/),pm=h.match(/^#p-(\d+)$/);let t=S.seoT||(S.name+' – '+tr('hero')),d=S.seoD||tr('sub'),ld=null;
+ const prod=p=>{const rs=prRev(p.id),o={'@context':'https://schema.org','@type':'Product',name:p.n,category:cn(p.c),description:p.desc||p.n,offers:{'@type':'Offer',priceCurrency:'BDT',price:pp(p),availability:'https://schema.org/'+(p.s>0?'InStock':'OutOfStock')}};if(rs.length)o.aggregateRating={'@type':'AggregateRating',ratingValue:avgOf(rs).toFixed(1),reviewCount:rs.length};return o};
+ if(lm){const l=D.lps.find(x=>x.slug===lm[1]);if(l){t=l.title;d=l.sub||d;const p=D.products.find(x=>x.id===l.pids[0]);if(p)ld=prod(p)}}
+ else if(pm){const p=D.products.find(x=>x.id===+pm[1]);if(p){t=p.n+' – '+S.name;d=(p.desc||d).slice(0,160);ld=prod(p)}}
+ else if(h==='#admin')t=S.name+' – Admin';
+ if(!ld&&h!=='#admin')ld={'@context':'https://schema.org','@type':'Store',name:S.name,address:S.addr,telephone:S.phone};
+ document.title=t;[['meta[name=description]',d],['meta[property="og:title"]',t],['meta[property="og:description"]',d]].forEach(([qq,v])=>{const e=document.querySelector(qq);if(e)e.setAttribute('content',v)});
+ const e=$('#ld');if(e)e.textContent=ld?JSON.stringify(ld):''}
+
+// ---------- landing pages ----------
+let lpSel=0,lpQty=1,lpTm=null;
+function lpTick(end){clearInterval(lpTm);const el=$('#lpc');if(!el||!end)return;const f=()=>{const s=Math.max(0,Math.floor((new Date(end)-Date.now())/1000)),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;el.innerHTML=[[d,'d'],[h,'h'],[m,'m'],[x,'s']].map(([v,u])=>`<div><b>${String(v).padStart(2,'0')}</b><small>${u}</small></div>`).join('');if(!s)clearInterval(lpTm)};f();lpTm=setInterval(f,1000)}
+function lpScroll(){const e=$('#lpo');e&&e.scrollIntoView({behavior:'smooth'})}
+function lpPick(id){lpSel=id;lpSum()}
+function lpQ(d){const p=D.products.find(x=>x.id===lpSel);if(!p)return;lpQty=Math.max(1,Math.min(p.s||1,lpQty+d));$('#lpq').textContent=lpQty;lpSum()}
+function lpSum(){const p=D.products.find(x=>x.id===lpSel),el=$('#lps');if(!p||!el)return;const sub=pp(p)*lpQty,fee=sub>=D.shop.free?0:D.shop.fee;el.innerHTML=`<p>${esc(p.n)} × ${lpQty}<br>${tr('subt')}: <b>${tk(sub)}</b><br>${tr('deliv')}: <b>${fee?tk(fee):tr('free')}</b><br>${tr('total')}: <b style="color:var(--lc)">${tk(sub+fee)}</b></p>`}
+function lpView(l){document.documentElement.style.setProperty('--lc',l.color||'#0f7b4f');
+ const ps=l.pids.map(i=>D.products.find(x=>x.id===i)).filter(Boolean);lpSel=ps[0]?ps[0].id:0;lpQty=1;
+ const p0=ps[0],im=imgOk(l.img)?resolve(l.img):(p0&&allImgs(p0)[0]),bul=(l.bul||'').split('\n').map(x=>x.trim()).filter(Boolean),rs=l.rv!==false?D.reviews.filter(r=>l.pids.includes(r.pid)):[];
+ $('#app').innerHTML=`<section class="lph"><div class="lpl"><h1>${esc(l.head)}</h1><p>${esc(l.sub)}</p>${p0?`<div class="lpp">${tk(pp(p0))}${p0.disc>0?`<s>${tk(p0.p)}</s><span class="dsc2">-${p0.disc}%</span>`:''}</div>`:''}<div id="lpc" class="lpc"></div><button class="btn lpb" onclick="lpScroll()">⚡ ${esc(l.cta||tr('orderNow'))}</button></div><div class="lpr">${im?`<img src="${esc(im)}" alt="${esc(l.head)}">`:`<div class="lpe">${esc(p0?p0.e:'🛍️')}</div>`}</div></section>
+ ${bul.length?`<div class="lpg">${bul.map(b=>`<div><i>✔</i>${esc(b)}</div>`).join('')}</div>`:''}
+ <section class="panel lpf" id="lpo"><h2 style="margin-top:0">${tr('orderNow')}</h2>
+ ${ps.length>1?`<div class="f"><b>${tr('chooseP')}</b>${ps.map(p=>`<label class="lpo"><input type="radio" name="lpsel" ${p.id===lpSel?'checked':''} onchange="lpPick(${p.id})"><span class="sgm">${allImgs(p)[0]?`<img src="${esc(allImgs(p)[0])}" alt="">`:esc(p.e)}</span><span style="flex:1">${esc(p.n)}</span><b>${tk(pp(p))}</b></label>`).join('')}</div>`:''}
+ <div style="display:flex;align-items:center;gap:12px;margin:10px 0"><button class="btn o s" onclick="lpQ(-1)">−</button><b id="lpq">1</b><button class="btn o s" onclick="lpQ(1)">+</button></div>
+ <div class="f"><input id="lpn" placeholder="${tr('nPh')}" autocomplete="name"><input id="lpp" placeholder="${tr('pPh')}" inputmode="tel" autocomplete="tel"><textarea id="lpa" rows="2" placeholder="${tr('aPh')}" autocomplete="street-address"></textarea><select id="lpy"><option value="COD">${tr('cod')}</option><option>bKash</option><option>Nagad</option></select></div>
+ <div id="lps"></div><button class="btn lpb" style="width:100%" onclick="lpOrder(${l.id})">⚡ ${tr('conf')}</button></section>
+ ${rs.length?`<h2 class="sec">⭐ ${tr('rvT')}</h2><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${rs.slice(0,6).map(r=>`<div class="card" style="cursor:default"><div class="stars">${star(r.r)}</div><div>${esc(r.t)}</div><div class="pc">— ${esc(r.name)}${r.v?' ✔':''}</div></div>`).join('')}</div>`:''}
+ <button class="btn lpfix" onclick="lpScroll()">⚡ ${esc(l.cta||tr('orderNow'))}</button>`;
+ lpSum();lpTick(l.end)}
+function lpOrder(id){const l=D.lps.find(x=>x.id===id),n=$('#lpn').value.trim(),ph=$('#lpp').value.trim(),a=$('#lpa').value.trim();
+ if(!n||!a)return toast(tr('needNA'));if(!/^01[3-9]\d{8}$/.test(ph))return toast(tr('badPh'));
+ const pr=D.products.find(x=>x.id===lpSel);if(!pr||pr.s<lpQty)return toast(tr('outS'));
+ const sub=pp(pr)*lpQty,fee=sub>=D.shop.free?0:D.shop.fee,o={id:D.nid++,date:new Date().toLocaleString('en-GB'),name:n,phone:ph,addr:a,items:[{id:pr.id,n:pr.n,p:pp(pr),q:lpQty}],sub,fee,total:sub+fee,profit:sub-pr.cost*lpQty,pay:$('#lpy').value,status:'নতুন',courier:'',track:'',src:'LP: '+l.slug,cd:0,coupon:''};
+ pr.s-=lpQty;D.orders.unshift(o);const c=D.customers[ph]||{name:n,phone:ph,addr:a,orders:0,spent:0};Object.assign(c,{name:n,addr:a,last:o.date});c.orders++;c.spent+=o.total;D.customers[ph]=c;save();
+ drawer(`<h3>✅ ${tr('ok')}</h3><p>${tr('ordNo')} <b>#${o.id}</b></p><p>${tr('total')}: <b>${tk(o.total)}</b></p><button class="btn" style="width:100%;margin:6px 0" onclick="dlReceipt(${o.id})">${tr('dlR')}</button><button class="btn o" style="width:100%;margin:6px 0" onclick="prReceipt(${o.id})">${tr('prR')}</button><button class="btn o" style="width:100%" onclick="closeAll();route()">${tr('cont')}</button>`)}
+function lpLink(slug){const u=location.href.split('#')[0]+'#lp-'+slug;$('#mb').innerHTML=`<button class="btn o s mx" onclick="closeM()">✕</button><h3 style="margin-top:0">🔗 ল্যান্ডিং পেজের লিংক</h3><input readonly value="${esc(u)}" onfocus="this.select()"><button class="btn" style="margin-top:10px" onclick="const i=this.previousElementSibling;i.select();navigator.clipboard&&navigator.clipboard.writeText(i.value).then(()=>toast(tr('copied')),()=>{})">📋 কপি</button><p><small style="color:var(--mu)">এই লিংক বিজ্ঞাপন, Facebook পোস্ট বা WhatsApp-এ শেয়ার করুন।</small></p>`;$('#md').classList.add('on')}
+function lpAdm(){$('#ab').innerHTML=`<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><b>🚀 ল্যান্ডিং পেজ (আনলিমিটেড)</b><button class="btn s" onclick="lpNew()">➕ নতুন পেজ</button></div>${D.lps.map(l=>`<div class="row" style="flex-wrap:wrap"><div><b>${esc(l.title)}</b> ${l.on===false?'<small>(বন্ধ)</small>':''}<br><small style="color:var(--mu)">#lp-${esc(l.slug)}</small></div><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn o s" onclick="go('lp-${esc(l.slug)}')">👁 দেখুন</button><button class="btn o s" onclick="lpLink('${esc(l.slug)}')">🔗 লিংক</button><button class="btn o s" onclick="lpForm(${l.id})">✏️ এডিট</button><button class="btn d s" onclick="lpDel(${l.id})">মুছুন</button></div></div>`).join('')||'<p style="color:var(--mu)">এখনো কোনো ল্যান্ডিং পেজ নেই। "নতুন পেজ" চাপুন।</p>'}</div>`}
+function lpNew(){const id=Date.now();D.lps.unshift({id,slug:'offer-'+id.toString(36),title:'নতুন অফার',head:'আপনার আকর্ষণীয় শিরোনাম',sub:'এখানে সংক্ষিপ্ত বিবরণ লিখুন',img:'',pids:D.products[0]?[D.products[0].id]:[],bul:'১০০% আসল পণ্য\nসারা দেশে হোম ডেলিভারি\nক্যাশ অন ডেলিভারি',cta:'এখনই অর্ডার করুন',color:'#0f7b4f',end:'',rv:true,on:true});save();lpForm(id)}
+function lpForm(id){const l=D.lps.find(x=>x.id===id),F=(k,lab)=>`<label>${lab}<input value="${esc(l[k]||'')}" onchange="lpSet(${id},'${k}',this.value)"></label>`;
+ $('#ab').innerHTML=`<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center"><b>✏️ ল্যান্ডিং পেজ এডিট</b><button class="btn o s" onclick="lpAdm()">← ফিরুন</button></div><div class="f">${F('title','পেজের নাম (গুগল ট্যাবে যা দেখাবে)')}${F('slug','লিংকের নাম (ইংরেজি অক্ষর / সংখ্যা / -)')}${F('head','প্রধান শিরোনাম')}
+ <label>সাব-শিরোনাম<textarea rows="2" onchange="lpSet(${id},'sub',this.value)">${esc(l.sub||'')}</textarea></label>
+ <label>সুবিধাগুলো (প্রতি লাইনে একটি)<textarea rows="4" onchange="lpSet(${id},'bul',this.value)">${esc(l.bul||'')}</textarea></label>${F('cta','বাটনের লেখা')}
+ <label>অফার শেষ হওয়ার সময় (ঐচ্ছিক)<input type="datetime-local" value="${esc(l.end||'')}" onchange="lpSet(${id},'end',this.value)"></label>
+ <label>থিম রং<input type="color" value="${esc(l.color||'#0f7b4f')}" onchange="lpSet(${id},'color',this.value)" style="height:42px;padding:2px"></label>
+ <div><b>হিরো ছবি</b><div style="display:flex;gap:12px;align-items:center;margin-top:6px">${imgOk(l.img)?`<img src="${esc(resolve(l.img))}" alt="" style="height:64px;border-radius:10px">`:''}<label class="btn s">📷 ছবি আপলোড<input type="file" accept="image/jpeg,image/png,image/webp" hidden onchange="lpUp(${id},this)"></label></div></div>
+ <div><b>কোন পণ্য বিক্রি হবে</b>${D.products.map(p=>`<label style="display:flex;gap:8px;align-items:center;margin:6px 0"><input type="checkbox" ${l.pids.includes(p.id)?'checked':''} onchange="lpPid(${id},${p.id},this.checked)"> ${esc(p.e)} ${esc(p.n)} — ${tk(pp(p))}</label>`).join('')}</div>
+ <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" ${l.rv!==false?'checked':''} onchange="lpSet(${id},'rv',this.checked)"> রিভিউ দেখান</label>
+ <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" ${l.on!==false?'checked':''} onchange="lpSet(${id},'on',this.checked)"> পেজ চালু আছে</label>
+ <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="go('lp-'+D.lps.find(x=>x.id===${id}).slug)">👁 প্রিভিউ</button><button class="btn o" onclick="lpLink(D.lps.find(x=>x.id===${id}).slug)">🔗 লিংক নিন</button></div></div></div>`}
+function lpSet(id,k,v){const l=D.lps.find(x=>x.id===id);if(k==='slug'){v=String(v).toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-+|-+$/g,'')||('offer-'+id.toString(36));if(D.lps.some(x=>x.id!==id&&x.slug===v)||['settings','sidebar','customize','upgrade','downloads','admin'].includes(v))v+='-'+Math.random().toString(36).slice(2,5)}l[k]=v;save();if(k==='slug'){toast('লিংক: #lp-'+v);lpForm(id)}else toast('সেভ হয়েছে ✅')}
+async function lpUp(id,el){const f=el.files[0];if(!f)return;try{const l=D.lps.find(x=>x.id===id);l.img=await putImg(await shrink(f,900));save();lpForm(id)}catch(e){toast('শুধু JPG / PNG / WebP দিন')}}
+function lpPid(id,pid,on){const l=D.lps.find(x=>x.id===id);l.pids=on?[...new Set([...l.pids,pid])]:l.pids.filter(x=>x!==pid);save()}
+function lpDel(id){if(confirm('মুছে ফেলবেন?')){D.lps=D.lps.filter(x=>x.id!==id);save();lpAdm()}}
+function mkAdm(){$('#ab').innerHTML=`<div class="panel"><b>🎁 কুপন কোড</b><div class="f2 f" style="margin-top:10px"><input id="kc" placeholder="কোড (যেমন EID10)"><input id="kp" type="number" min="1" max="90" placeholder="ছাড় %"><input id="km" type="number" min="0" placeholder="ন্যূনতম অর্ডার (ঐচ্ছিক)"><button class="btn" onclick="cpAdd()">➕ যোগ করুন</button></div><div class="tw"><table><tr><th>কোড</th><th>ছাড়</th><th>ন্যূনতম</th><th>চালু</th><th></th></tr>${D.coupons.map((c,i)=>`<tr><td><b>${esc(c.code)}</b></td><td>${c.pct}%</td><td>${tk(c.min||0)}</td><td><input type="checkbox" ${c.on!==false?'checked':''} onchange="D.coupons[${i}].on=this.checked;save()"></td><td><button class="btn d s" onclick="D.coupons.splice(${i},1);save();mkAdm()">মুছুন</button></td></tr>`).join('')||'<tr><td colspan=5>কোনো কুপন নেই</td></tr>'}</table></div></div>`}
+function cpAdd(){const code=$('#kc').value.trim().toUpperCase().replace(/[^A-Z0-9]/g,''),pct=Math.min(90,Math.max(1,+$('#kp').value||0));if(!code||!$('#kp').value)return toast('কোড ও ছাড় % দিন');if(D.coupons.some(c=>c.code===code))return toast('এই কোড আছে');D.coupons.push({code,pct,min:+$('#km').value||0,on:true});save();mkAdm()}
+let chOn=false,chMsgs=[],chMode=null;
+function chFaq(){const S=D.shop,b=[[tr('chDel'),tr('chDelA').replace('{fee}',tk(S.fee)).replace('{free}',tk(S.free))],[tr('chPay'),tr('chPayA')],[tr('chTrk'),'#trk'],[tr('chHum'),'#hum']];const c=(S.faq||'').split('\n').map(l=>l.split('|')).filter(a=>a.length>=2&&a[0].trim()).map(a=>[a[0].trim(),a.slice(1).join('|').trim()]);return [...b,...c]}
+function chatToggle(){chOn=!chOn;$('#chp').classList.toggle('on',chOn);if(chOn){if(!chMsgs.length)chMsgs=[{b:1,t:tr('chHi')}];chRender()}}
+function chRender(){$('#chp').innerHTML=`<div class="chh"><b>💬 ${tr('chT')}</b><button class="btn s" onclick="chatToggle()">✕</button></div><div class="chm" id="chm">${chMsgs.map(m=>`<div class="cm ${m.b?'b':'u'}">${m.h?m.t:esc(m.t)}</div>`).join('')}</div><div class="chq">${chFaq().map((f,i)=>`<button type="button" onclick="chAsk(${i})">${esc(f[0])}</button>`).join('')}</div><div class="chi"><input id="chx" placeholder="${tr('chPh')}" onkeydown="if(event.key==='Enter')chSend()"><button class="btn s" onclick="chSend()">➤</button></div>`;const m=$('#chm');m.scrollTop=m.scrollHeight}
+function chPush(t,b,h){chMsgs.push({t,b,h});const m=$('#chm');if(m){m.insertAdjacentHTML('beforeend',`<div class="cm ${b?'b':'u'}">${h?t:esc(t)}</div>`);m.scrollTop=m.scrollHeight}}
+function chHuman(t){const S=D.shop,wn=(S.wa||'').replace(/\D/g,''),ms=safeUrl(S.ms),l=[];if(wn)l.push(`<a target="_blank" rel="noopener" href="https://wa.me/${wn}">WhatsApp</a>`);if(ms)l.push(`<a target="_blank" rel="noopener" href="${esc(ms)}">Messenger</a>`);if(S.phone)l.push(`<a href="tel:${esc(String(S.phone).replace(/[^\d+]/g,''))}">📞 ${esc(S.phone)}</a>`);chPush(`${t?esc(t)+'<br>':''}<div class="chl">${l.join('')}</div>`,1,1)}
+function chAsk(i){const it=chFaq()[i];chPush(it[0],0);if(it[1]==='#trk'){chMode='trk';chPush(tr('chTrkQ'),1)}else if(it[1]==='#hum')chHuman();else chPush(it[1],1)}
+function chSend(){const el=$('#chx'),v=el.value.trim();if(!v)return;el.value='';chPush(v,0);
+ if(chMode==='trk'){chMode=null;const os=D.orders.filter(o=>o.phone===v).slice(0,3);return chPush(os.length?os.map(o=>`#${o.id} · ${tr('chSt')}: ${o.status} · ${tk(o.total)}`).join('\n'):tr('chTrkNo'),1)}
+ const lv=v.toLowerCase(),c=chFaq().slice(4).find(f=>lv.includes(f[0].toLowerCase())||f[0].toLowerCase().includes(lv));if(c)return chPush(c[1],1);
+ const ps=D.products.filter(p=>lv.split(/\s+/).some(w=>w.length>1&&p.n.toLowerCase().includes(w))).slice(0,3);
+ if(ps.length)return chPush(`${esc(tr('chFound'))}<div class="chl">${ps.map(p=>`<button type="button" onclick="openP(${p.id})">${esc(p.e)} ${esc(p.n)} · ${tk(pp(p))}</button>`).join('')}</div>`,1,1);
+ chHuman(tr('chNo'))}
+function adm(){
+ if(!admin)return login();
+ const tabs=[['dash','📊 ড্যাশবোর্ড'],['prod','📦 পণ্য ও স্টক'],['ord','🧾 অর্ডার'],['cus','👥 গ্রাহক'],['rev','⭐ রিভিউ'],['lp','🚀 ল্যান্ডিং পেজ'],['mk','🎁 কুপন'],['set','⚙️ সেটিংস']];
+ $('#app').innerHTML=`<div class="tabs">${tabs.map(t=>`<div class="tab ${tab===t[0]?'on':''}" onclick="tab='${t[0]}';adm()">${t[1]}</div>`).join('')}<div class="sp"></div><div class="tab" onclick="logout()">লগআউট</div></div><div id="ab"></div>`;
+ ({dash,prod,ord,cus,rev,set,lp:lpAdm,mk:mkAdm})[tab]();
+}
+function dash(){
+ const rev=D.orders.reduce((a,o)=>a+o.total,0),pf=D.orders.reduce((a,o)=>a+o.profit,0),sv=D.products.reduce((a,p)=>a+p.s*p.cost,0),low=D.products.filter(p=>p.s<=10);
+ $('#ab').innerHTML=`<div class="kp"><div><small>মোট বিক্রি</small><b>${tk(rev)}</b></div><div><small>মোট লাভ</small><b>${tk(pf)}</b></div><div><small>অর্ডার</small><b>${D.orders.length}</b></div><div><small>গ্রাহক</small><b>${Object.keys(D.customers).length}</b></div><div><small>স্টক মূল্য</small><b>${tk(sv)}</b></div><div><small>গড় রেটিং</small><b>${avg().toFixed(1)} ★</b></div></div>
+ <div class="panel" style="margin-top:16px"><b>⚠️ কম স্টক (≤১০)</b>${low.map(p=>`<div class="row"><span>${esc(p.e)} ${esc(p.n)}</span><b style="color:var(--dg)">${p.s}</b></div>`).join('')||'<p>সব ঠিক আছে ✅</p>'}</div>
+ <div class="panel" style="margin-top:16px"><b>📥 Excel রিপোর্ট ডাউনলোড</b><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn s" onclick="exportX('all')">সব একসাথে</button><button class="btn o s" onclick="exportX('orders')">অর্ডার/সেলস</button><button class="btn o s" onclick="exportX('stock')">স্টক</button><button class="btn o s" onclick="exportX('cust')">গ্রাহক</button></div></div>`;countUp()}
+function prod(){
+ $('#ab').innerHTML=`<div class="panel"><b>➕ নতুন পণ্য</b><div class="f2 f"><input id="pn" placeholder="নাম"><input id="pe" placeholder="ইমোজি 🍎 (ছবি না দিলে)" maxlength="4"><div style="grid-column:1/-1;display:flex;gap:10px;align-items:center"><label class="btn o s">📷 ছবি আপলোড (একাধিক, সর্বোচ্চ ৫টি)<input type="file" multiple accept="image/jpeg,image/png,image/webp" hidden onchange="pick(this)"></label><img id="pv" alt="" hidden style="width:56px;height:56px;object-fit:cover;border-radius:10px"></div><select id="pc">${D.cats.map(c=>`<option>${esc(c)}</option>`).join('')}</select><input id="pp" type="number" placeholder="বিক্রয়মূল্য"><input id="pk" type="number" placeholder="ক্রয়মূল্য"><input id="ps" type="number" placeholder="স্টক"><input id="pd" type="number" min="0" max="90" placeholder="ছাড় % (ঐচ্ছিক)"><textarea id="pds" rows="2" placeholder="পণ্যের বিবরণ" style="grid-column:1/-1"></textarea></div><button class="btn" onclick="addP()">যোগ করুন</button></div>
+ <div class="panel tw" style="margin-top:14px"><table><tr><th>ছবি</th><th>পণ্য</th><th>ক্যাটাগরি</th><th>ক্রয়</th><th>বিক্রয়</th><th>স্টক</th><th>ছাড় %</th><th></th></tr>${D.products.map(p=>`<tr><td><label style="cursor:pointer">${imgOk(p.img)?`<img src="${esc(resolve(p.img))}" alt="" style="width:48px;height:48px;object-fit:cover;border-radius:8px;display:block">`:`<span style="font-size:2rem">${esc(p.e)}</span><br>`}<small>📷 ${p.img?'বদলান':'আপলোড'}</small><input type="file" accept="image/jpeg,image/png,image/webp" hidden onchange="chImg(${p.id},this)"></label><button class="btn s" style="margin-top:6px" onclick="detEd(${p.id})">🖼️ ${allImgs(p).length}/5 ছবি</button></td><td><input value="${esc(p.n)}" style="width:170px" onchange="upP(${p.id},'n',this.value)"></td><td><select onchange="upP(${p.id},'c',this.value)" style="width:auto">${D.cats.map(c=>`<option value="${esc(c)}" ${c===p.c?'selected':''}>${esc(cn(c))}</option>`).join('')}</select></td><td><input type="number" value="${p.cost}" style="width:80px" onchange="upP(${p.id},'cost',+this.value)"></td><td><input type="number" value="${p.p}" style="width:80px" onchange="upP(${p.id},'p',+this.value)"></td><td><input type="number" value="${p.s}" style="width:80px" onchange="upP(${p.id},'s',+this.value)"></td><td><input type="number" min="0" max="90" value="${p.disc||0}" style="width:70px" onchange="upP(${p.id},'disc',Math.min(90,Math.max(0,+this.value||0)))"></td><td><button class="btn o s" onclick="detEd(${p.id})">✏️ বিবরণ/ছবি</button> <button class="btn d s" onclick="delP(${p.id})">মুছুন</button></td></tr>`).join('')}</table></div>`}
+let pend='',pendG=[];
+function shrink(file,max=640){return new Promise((ok,no)=>{if(!/^image\/(jpeg|png|webp)$/.test(file.type))return no('type');const r=new FileReader();r.onerror=()=>no('read');r.onload=()=>{const im=new Image();im.onerror=()=>no('img');im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height));const c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.78))};im.src=r.result};r.readAsDataURL(file)})}
+async function pick(el){const fs=[...el.files].slice(0,5);if(!fs.length)return;try{const a=[];for(const f of fs)a.push(await putImg(await shrink(f)));pend=a[0];pendG=a.slice(1);const v=$('#pv');v.src=resolve(pend);v.hidden=false;toast(a.length+' টি ছবি রেডি ✅')}catch(e){toast('শুধু JPG / PNG / WebP দিন')}}
+async function chImg(id,el){const f=el.files[0];if(!f)return;try{const p=D.products.find(x=>x.id===id);p.img=await putImg(await shrink(f));save();toast('ছবি আপডেট ✅');prod()}catch(e){toast('শুধু JPG / PNG / WebP দিন')}}
+function detEd(id){const p=D.products.find(x=>x.id===id),ims=allImgs(p);
+ $('#mb').innerHTML=`<button class="btn o s mx" onclick="closeM();prod()">✕</button><h3 style="margin-top:0">✏️ ${esc(p.n)}</h3>
+ <label>বিবরণ (Description)<textarea rows="5" onchange="upP(${id},'desc',this.value.trim())">${esc(p.desc||'')}</textarea></label>
+ <p><b>ছবি (প্রথমটি মেইন, সর্বোচ্চ ৫টি)</b></p><div style="display:flex;gap:10px;flex-wrap:wrap">${ims.map((u,k)=>`<div style="position:relative"><img src="${esc(u)}" alt="" style="width:80px;height:80px;border-radius:10px;object-fit:cover;display:block;border:2px solid ${k?'var(--br)':'var(--pr)'}"><button class="btn d s" style="position:absolute;top:2px;right:2px;padding:1px 6px" onclick="delImg(${id},${k})">✕</button></div>`).join('')||'<small>কোনো ছবি নেই</small>'}</div>
+ ${ims.length<5?`<label class="btn s" style="display:inline-block;margin-top:12px">➕ ছবি যোগ করুন<input type="file" accept="image/jpeg,image/png,image/webp" multiple hidden onchange="addImgs(${id},this)"></label>`:''}`;
+ $('#md').classList.add('on')}
+function setImgs(p,a){p.img=a[0]||'';p.gal=a.slice(1);save()}
+function delImg(id,k){const p=D.products.find(x=>x.id===id),a=rawImgs(p);a.splice(k,1);setImgs(p,a);detEd(id)}
+async function addImgs(id,el){const p=D.products.find(x=>x.id===id),a=rawImgs(p);try{for(const f of [...el.files]){if(a.length>=5)break;a.push(await putImg(await shrink(f)))}}catch(e){toast('শুধু JPG / PNG / WebP দিন')}setImgs(p,a);detEd(id)}
+function addP(){const n=$('#pn').value.trim(),p=+$('#pp').value;if(!n||!p)return toast('নাম ও দাম দিন');D.products.push({id:D.pid++,n,e:$('#pe').value||'📦',c:$('#pc').value,p,cost:+$('#pk').value||0,s:+$('#ps').value||0,img:pend,gal:pendG,disc:Math.min(90,Math.max(0,+$('#pd').value||0)),desc:$('#pds').value.trim()});pend='';pendG=[];save();toast('যোগ হয়েছে');prod()}
+function upP(id,k,v){D.products.find(p=>p.id===id)[k]=v;save();toast('সেভ হয়েছে')}
+function delP(id){if(confirm('মুছে ফেলবেন?')){D.products=D.products.filter(p=>p.id!==id);save();prod()}}
+function ord(){
+ $('#ab').innerHTML=`<div class="panel tw"><div style="margin-bottom:10px"><button class="btn s" onclick="exportX('orders')">⬇️ Excel</button></div><table><tr><th>#</th><th>তারিখ</th><th>গ্রাহক</th><th>মোট</th><th>স্ট্যাটাস</th><th>কুরিয়ার</th><th>রসিদ</th></tr>${D.orders.map(o=>`<tr><td>${o.id}</td><td>${esc(o.date)}</td><td>${esc(o.name)}<br><small>${esc(o.phone)}</small></td><td>${tk(o.total)}</td><td><select onchange="stO(${o.id},this.value)">${['নতুন','প্রসেসিং','কুরিয়ারে','ডেলিভারড','বাতিল'].map(s=>`<option ${s===o.status?'selected':''}>${s}</option>`).join('')}</select></td><td>${o.track?`${esc(o.courier)}<br><small>${esc(o.track)}</small>`:`<select onchange="cour(${o.id},this.value)"><option value="">কুরিয়ার বাছুন</option>${D.couriers.map(c=>`<option>${esc(c)}</option>`).join('')}</select>`}</td><td><button class="btn o s" onclick="dlReceipt(${o.id})">⬇️</button> <button class="btn o s" onclick="prReceipt(${o.id})">🖨️</button></td></tr>`).join('')||'<tr><td colspan=7>এখনো কোনো অর্ডার নেই</td></tr>'}</table></div>`}
+function stO(id,s){const o=D.orders.find(x=>x.id===id);if(s==='বাতিল'&&o.status!=='বাতিল')o.items.forEach(i=>{const p=D.products.find(x=>x.id===i.id);if(p)p.s+=i.q});o.status=s;save();toast('স্ট্যাটাস আপডেট')}
+function cour(id,c){if(!c)return;const o=D.orders.find(x=>x.id===id);o.courier=c;o.track=c.slice(0,3).toUpperCase()+'-'+Date.now().toString(36).toUpperCase();o.status='কুরিয়ারে';save();toast('কুরিয়ার অ্যাসাইন হয়েছে ✅');ord()}
+function cus(){
+ $('#ab').innerHTML=`<div class="panel tw"><div style="margin-bottom:10px"><button class="btn s" onclick="exportX('cust')">⬇️ Excel</button></div><table><tr><th>নাম</th><th>ফোন</th><th>ঠিকানা</th><th>অর্ডার</th><th>মোট ক্রয়</th></tr>${Object.values(D.customers).map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.phone)}</td><td>${esc(c.addr)}</td><td>${c.orders}</td><td>${tk(c.spent)}</td></tr>`).join('')||'<tr><td colspan=5>কোনো গ্রাহক নেই</td></tr>'}</table></div>`}
+function rev(){
+ $('#ab').innerHTML=`<div class="panel">${D.reviews.map((r,i)=>`<div class="row"><div><span class="stars">${star(r.r)}</span> <b>${esc(r.name)}</b> ${r.pid?`<small>📦 ${esc((D.products.find(x=>x.id===r.pid)||{}).n||'')} ${r.v?'✔':''}</small>`:''}<br>${esc(r.t)}</div><button class="btn d s" onclick="D.reviews.splice(${i},1);save();rev()">মুছুন</button></div>`).join('')||'<p>কোনো রিভিউ নেই</p>'}</div>`}
+function set(){
+ const s=D.shop;
+ $('#ab').innerHTML=`<div class="panel"><b>ওয়েবসাইট সেটিংস</b><div style="display:flex;align-items:center;gap:12px;margin:12px 0">${imgOk(s.logo)?`<img src="${esc(resolve(s.logo))}" alt="" style="height:48px;border-radius:8px">`:'<span style="font-size:2rem">🏪</span>'}<label class="btn s">🖼️ লোগো আপলোড (PNG / JPG)<input type="file" accept="image/png,image/jpeg,image/webp" hidden onchange="upLogo(this)"></label>${s.logo?`<button class="btn d s" onclick="D.shop.logo='';save();route()">মুছুন</button>`:''}</div><div class="f">${[['name','দোকানের নাম'],['hero','হিরো শিরোনাম'],['sub','হিরো বিবরণ'],['phone','ফোন'],['addr','ঠিকানা'],['fee','ডেলিভারি চার্জ'],['free','ফ্রি ডেলিভারি (ন্যূনতম)'],['wa','WhatsApp নম্বর (যেমন 8801700000000)'],['ms','Messenger লিংক (যেমন https://m.me/আপনার-পেজ)'],['fb','Facebook পেজ লিংক'],['ig','Instagram লিংক'],['ann','উপরের ঘোষণা বার (অফার/নোটিশ)'],['seoT','SEO টাইটেল (গুগলে যা দেখাবে)'],['seoD','SEO বিবরণ (গুগলে যা দেখাবে)'],['pass','অ্যাডমিন পাসওয়ার্ড']].map(([k,l])=>`<label>${l}<input id="st_${k}" value="${esc(s[k]||(k==='hero'||k==='sub'?tr(k):''))}"></label>`).join('')}<label>ক্যাটাগরি (কমা দিয়ে)<input id="st_cats" value="${esc(D.cats.join(','))}"></label><label>কুরিয়ার সার্ভিস (কমা দিয়ে)<input id="st_cou" value="${esc(D.couriers.join(','))}"></label><label>চ্যাটের নিজস্ব প্রশ্ন-উত্তর (প্রতি লাইনে একটি: প্রশ্ন|উত্তর)<textarea id="st_faq" rows="4" placeholder="রিটার্ন পলিসি কী?|৭ দিনের মধ্যে পণ্য ফেরত দেওয়া যাবে।">${esc(s.faq||'')}</textarea></label><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="st_showRev" ${opt('showRev')?'checked':''}> পণ্যের পপআপে রিভিউ দেখান</label><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="st_buyerOnly" ${opt('buyerOnly')?'checked':''}> শুধু যারা কিনেছেন তারাই রিভিউ দিতে পারবে</label><button class="btn" onclick="saveS()">সেভ করুন</button></div></div>
+ <div class="panel" style="margin-top:14px"><b>ডেটা</b><p><small>ডেটা এই ব্রাউজারে সংরক্ষিত। নিয়মিত Excel ব্যাকআপ নিন।</small></p><button class="btn d s" onclick="if(confirm('সব ডেটা রিসেট?')){D=seed();save();adm()}">ডেমো ডেটায় রিসেট</button></div>`}
+function saveS(){['name','hero','sub','phone','addr','pass','wa','ms','fb','ig','ann','seoT','seoD'].forEach(k=>D.shop[k]=$('#st_'+k).value);['fee','free'].forEach(k=>D.shop[k]=+$('#st_'+k).value||0);D.shop.faq=$('#st_faq').value;D.shop.showRev=$('#st_showRev').checked;D.shop.buyerOnly=$('#st_buyerOnly').checked;if(D.shop.hero===tr('hero'))D.shop.hero='';if(D.shop.sub===tr('sub'))D.shop.sub='';D.cats=$('#st_cats').value.split(',').map(x=>x.trim()).filter(Boolean);D.couriers=$('#st_cou').value.split(',').map(x=>x.trim()).filter(Boolean);save();toast('সেভ হয়েছে ✅');route()}
+
+// ---------- router ----------
+function route(){
+ closeAll();clearInterval(lpTm);document.documentElement.style.removeProperty('--lc');const a=location.hash==='#admin',lm=location.hash.match(/^#lp-([a-z0-9-]+)$/),lp=lm&&D.lps.find(x=>x.slug===lm[1]&&x.on!==false),pm=location.hash.match(/^#p-(\d+)$/);
+ $('#swb').textContent=a?tr('shopB'):'🔐 Admin';$('#lg').innerHTML=LG.map(l=>`<option value="${l[0]}" ${l[0]===LG[LI][0]?'selected':''}>${l[1]}</option>`).join('');document.documentElement.lang=LG[LI][0];$('#cartb').innerHTML='🛒 '+tr('cart')+' <span class="badge" id="cc">'+cnt()+'</span>';thIcon();$('#cartb').style.display=(a||lp)?'none':'';
+ document.title=(D.shop.name||'Shop')+(a?' – Admin':' – অনলাইন সুপারশপ');
+ $('#foot').innerHTML=`<b>${esc(D.shop.name)}</b><div>📍 ${esc(D.shop.addr)} · 📞 ${esc(D.shop.phone)}</div><div class="pay"><span>bKash</span><span>Nagad</span><span>COD</span></div><div>${[['Facebook',D.shop.fb],['Instagram',D.shop.ig]].filter(x=>safeUrl(x[1])).map(x=>`<a href="${esc(safeUrl(x[1]))}" target="_blank" rel="noopener" style="margin:0 8px;color:var(--pr)">${x[0]}</a>`).join('')}</div><small>© ${new Date().getFullYear()} ${esc(D.shop.name)}</small>`;
+ document.querySelector('.logo').innerHTML=(imgOk(D.shop.logo)?`<img src="${esc(resolve(D.shop.logo))}" alt="">`:'')+`<b>${esc(D.shop.name)}</b>`;$('#q').placeholder=tr('srch').replace(/^🔍\s*/,'');sgClose();document.querySelector('.srch').style.display=(a||lp)?'none':'';$('#swb').style.display=(lp&&!admin)?'none':'';
+ const an=$('#ann');an.textContent=D.shop.ann||'';an.style.display=(D.shop.ann&&!a)?'':'none';
+ const wn=(D.shop.wa||'').replace(/\D/g,''),wb=$('#wab');wb.style.display=(wn&&!a)?'flex':'none';$('#chb').style.display=a?'none':'';chMsgs=[];chOn=false;chMode=null;$('#chp').classList.remove('on');if(wn)wb.href='https://wa.me/'+wn+'?text='+encodeURIComponent('Hello '+D.shop.name);
+ if(a)adm();else if(lp)lpView(lp);else shop();if(pm&&!lp)openP(+pm[1]);updSEO();updMC();
+}
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeM();closeAll()}if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'')&&document.querySelector('.srch').style.display!=='none'){e.preventDefault();$('#q').focus()}});
+document.addEventListener('click',e=>{if(!e.target.closest('#sb'))sgClose()});
+window.addEventListener('hashchange',route);
+Promise.race([(async()=>{await idbOpen();await idbAll();await migrateImgs()})(),new Promise(r=>setTimeout(r,2500))]).then(route,route);
+</script>
+</body>
+</html>
